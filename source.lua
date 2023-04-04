@@ -1,8 +1,7 @@
-if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
-
 repeat wait() until game:IsLoaded()
 
 getgenv().Shirou = { Settings = {
+
     AntiGroundShots = true, -- remove
     AntiGroundValue = 0.5, -- remove
     WhenAntiGroundActivate = -20, -- remove
@@ -123,7 +122,7 @@ getgenv().Shirou = { Settings = {
 }
 
     --// Check if lock is loaded
-    if getgenv().LoadShirou == true and Shirou.Settings.SendNotification then
+    if getgenv().LoadShirou == true then
 		game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "Shirou";
 		Text = "Shirous lock is already loaded.";
@@ -143,14 +142,12 @@ getgenv().Shirou = { Settings = {
 		getgenv().LoadShirou = true
 		
 		--// Notification function
-	if Shirou.Settings.SendNotification then
 		game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "Shirous lock loaded";
 		Text = "食肉#0001";
 		Icon = "";
 		Duration = 5
 	})
-	end
 
 getgenv = getgenv
 Drawing = Drawing
@@ -1011,4 +1008,3 @@ Players.PlayerRemoving:Connect(function(Player)
 	end
 	Script.EspPlayers[Player] = nil
 end)
-end
