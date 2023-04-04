@@ -3,6 +3,7 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 repeat wait() until game:IsLoaded()
 	
 local antimacrofling = game:GetService("RunService").Heartbeat:Connect(function()
+game:GetService("RunService").RenderStepped:Wait()
 game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
 end)
 
