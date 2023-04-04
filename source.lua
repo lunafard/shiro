@@ -8,7 +8,7 @@ getgenv().Shirou = { Settings = {
     WallCheck = true, -- remove
     CheckIf_KO = true, -- remove
     CheckIf_TargetDeath = true, -- remove
-    Humanize = false, -- remove
+    Humanize = true, -- remove
     HumanizeValue = 2, -- remove
     TriggerBot = false, -- remove
     UseTriggerBotKeybind = false, -- remove
