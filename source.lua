@@ -204,8 +204,8 @@ Mouse.KeyDown:Connect(function(Key)
 		Shirou.Settings.Enabled = not Shirou.Settings.Enabled
 		if Shirou.Settings.Enabled_Notification then
 			game.StarterGui:SetCore("SendNotification",{
-				Title = "Shirou",
-				Text = "Silent Aim is ; " .. tostring(Shirou.Settings.Enabled),
+				Title = "Shirous Lock",
+				Text = "" .. tostring(Shirou.Settings.Enabled),
 				Icon = "",
 				Duration = 1
 			})
@@ -216,8 +216,8 @@ Mouse.KeyDown:Connect(function(Key)
 		Shirou.Settings.DetectUnderGround = not Shirou.Settings.DetectUnderGround
 		if Shirou.Settings.Enabled_Notification then
 			game.StarterGui:SetCore("SendNotification",{
-				Title = "Shirou",
-				Text = "UnderGround Resolver is ; " .. tostring(Shirou.Settings.DetectUnderGround),
+				Title = "Shirous UG Resolver",
+				Text = "" .. tostring(Shirou.Settings.DetectUnderGround),
 				Icon = "",
 				Duration = 1
 			})
@@ -228,8 +228,8 @@ Mouse.KeyDown:Connect(function(Key)
 		Shirou.Settings.DetectDesync = not Shirou.Settings.DetectDesync
 		if Shirou.Settings.Enabled_Notification then
 			game.StarterGui:SetCore("SendNotification",{
-				Title = "Shirou",
-				Text = "Desync Resolver is ; " .. tostring(Shirou.Settings.DetectDesync),
+				Title = "Shirous Desync Resolver",
+				Text = "" .. tostring(Shirou.Settings.DetectDesync),
 				Icon = "",
 				Duration = 1
 			})
