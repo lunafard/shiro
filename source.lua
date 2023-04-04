@@ -8,7 +8,6 @@ game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateTy
 end)
 
 getgenv().Shirou = { Settings = {
-
     AntiGroundShots = true, -- remove
     AntiGroundValue = 0.5, -- remove
     WhenAntiGroundActivate = -20, -- remove
