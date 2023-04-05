@@ -145,10 +145,11 @@ getgenv().Shirou = { Settings = {
 	})
 		return 
 		end
+		end
 		
 		getgenv().LoadShirou = true
 		
-		--// Notification function
+if Shirou.Settings.Enabled_Notification then
 		game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "Shirous lock loaded";
 		Text = "食肉#0001";
