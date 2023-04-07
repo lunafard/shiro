@@ -174,9 +174,9 @@ Script.Functions.UpdateFOV = function()
 					local Magnitude = (SilentTarget.Character.HumanoidRootPart.Position - Client.Character.HumanoidRootPart.Position).Magnitude
 					if Magnitude < ShirouSettings.Close_Activation then
 						ShirouSettings.Radius = WeaponSettingsV2.Close
-					elseif Magnitude < ShirouSettings.Medium_Activation then
+					elseif Magnitude < Arceus.RangeFov.Medium_Activation then
 						ShirouSettings.Radius = WeaponSettingsV2.Med
-					elseif Magnitude < ShirouSettings.Far_Activation then
+					elseif Magnitude < Arceus.RangeFov.Far_Activation then
 						ShirouSettings.Radius = WeaponSettingsV2.Far
 					end
 				end
