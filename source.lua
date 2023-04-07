@@ -1,19 +1,24 @@
 if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 
 repeat wait() until game:IsLoaded()
-	
+
+if ShirouSettings.AntiMacroFling then
 local antimacrofling = game:GetService("RunService").Heartbeat:Connect(function()
 game:GetService("RunService").RenderStepped:Wait()
 game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
 end)
+end
 
-getgenv().Shirou = { Settings = {
+if not ShirouSettings.AntiMacroFling then
+antimacrofling:Disconnect()
+end
+
+getgenv().ShirouSettings = {
     AntiGroundShots = true, -- remove
     AntiGroundValue = 0.5, -- remove
     WhenAntiGroundActivate = -20, -- remove
     WallCheck = true, -- remove
-    CheckIf_KO = true, -- remove
-    CheckIf_TargetDeath = true, -- remove
+    K_O_Check = getgenv().ShirouSettings.K_O_Check,
     Humanize = false, -- remove
     HumanizeValue = 2, -- remove
     TriggerBot = false, -- remove
@@ -27,15 +32,13 @@ getgenv().Shirou = { Settings = {
     Close_Activation = 16, -- remove
     Transparency = 1, -- remove
     Color = Color3.fromRGB(0,0,0), -- remove
-    HitParts = "HumanoidRootPart", -- remove
+    HitParts = getgenv().ShirouSettings.HitParts, -- remove
     UseAirPart = false, -- remove
 	AirPart = "LowerTorso", -- remove
-    DisableTargetDeath = true, -- remove
-    DisableLocalDeath = true, -- remove
-    DisableOn_KO = true, -- remove
+    KnockedCheck = getgenv().ShirouSettings.KnockedCheck, -- remove
     UseCircleRadius = true, -- remove
     HoldMode = false, -- remove
-    Part = "UpperTorso", -- remove
+    Part = getgenv().ShirouSettings.Part, -- remove
     ASTransparency = 0.5, -- remove
     ASColor = Color3.fromRGB(0,0,0), -- remove
 	DetectDesync = true, -- remove
@@ -48,8 +51,8 @@ getgenv().Shirou = { Settings = {
 	UnderGroundKey = "X", -- remove
 	VisibleCheck = true, -- remove
 	TeamCheck = false, -- remove
-	UseLay = false, -- remove
-	LayKeybind = "v", -- remove
+	UseLay = getgenv().ShirouSettings.UseLay, -- remove
+	LayKeybind = getgenv().ShirouSettings.LayKeybind, -- remove
 	ESPHoldMode = false, -- remove
 	Name = {Enabled = true, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
 	Box = {Enabled = true, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
@@ -57,79 +60,144 @@ getgenv().Shirou = { Settings = {
 	HealthText = {Enabled = true, OutLine = true, Color = Color3.fromRGB(161, 196, 140)}, -- remove
 	Distance = {Enabled = false, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
 
-	Enabled = Shirou.Settings.Enabled,
-    KeyBind = Shirou.Settings.KeyBind, -- // toggle on and off silent
-    Show_Fov = Shirou.Settings.Show_Fov,
-    Fov_Filled = Shirou.Settings.Fov_Filled,
-    Fov_Size = Shirou.Settings.Fov_Size,
-	Crew_Whitelist = Shirou.Settings.Crew_Whitelist,
-	Friends_Whitelist = Shirou.Settings.Friends_Whitelist,
-	Enabled_Notification = Shirou.Settings.Enabled_Notification,
-	ESP = Shirou.Settings.ESP,
-	UseEspKeybind = Shirou.Settings.UseEspKeybind, -- // Keybinds ESP so you can turn it on and off with the press of EspKey.
-	EspKey = Shirou.Settings.EspKey,
-	Anti_AimViewer = Shirou.Settings.Anti_AimViewer, -- // Spoofs mousepos to bypass silent aim being aimviewed.
-    Auto_prediction = Shirou.Settings.Auto_prediction,
-    HitChance = Shirou.Settings.HitChance,
+	Enabled = ShirouSettings.Enabled,
+    KeyBind = ShirouSettings.KeyBind, -- // toggle on and off silent
+    Show_Fov = ShirouSettings.Show_Fov,
+    Fov_Filled = ShirouSettings.Fov_Filled,
+    Fov_Size = ShirouSettings.Fov_Size,
+	Crew_Whitelist = ShirouSettings.Crew_Whitelist,
+	Friends_Whitelist = ShirouSettings.Friends_Whitelist,
+	Enabled_Notification = ShirouSettings.Enabled_Notification,
+	ESP = ShirouSettings.ESP,
+	UseEspKeybind = ShirouSettings.UseEspKeybind, -- // Keybinds ESP so you can turn it on and off with the press of EspKey.
+	EspKey = ShirouSettings.EspKey,
+	Anti_AimViewer = ShirouSettings.Anti_AimViewer, -- // Spoofs mousepos to bypass silent aim being aimviewed.
+    Auto_prediction = ShirouSettings.Auto_prediction,
+    HitChance = ShirouSettings.HitChance,
 
-	Prediction = Shirou.Settings.Prediction, -- // Main Prediction
+	Prediction = ShirouSettings.Prediction, -- // Main Prediction
 
-    NearestHitPart = Shirou.Settings.NearestHitPart,
+    NearestHitPart = ShirouSettings.NearestHitPart,
 
 ------- Range Fov  -------
     -- // Do not edit the gun names.
 
-    EnableRangeFOV = Shirou.Settings.EnableRangeFOV,
+    EnableRangeFOV = ShirouSettings.EnableRangeFOV,
     DoubleBarrel = { -- // DB
-	Far = Shirou.Settings.DoubleBarrel.Far,
-	Med = Shirou.Settings.DoubleBarrel.Med,
-	Close = Shirou.Settings.DoubleBarrel.Close
+	Far = ShirouSettings.DoubleBarrel.Far,
+	Med = ShirouSettings.DoubleBarrel.Med,
+	Close = ShirouSettings.DoubleBarrel.Close
 },
 	Revolver = { -- // Rev
-	Far = Shirou.Settings.Revolver.Far,
-	Med = Shirou.Settings.Revolver.Med,
-	Close = Shirou.Settings.Revolver.Close
+	Far = ShirouSettings.Revolver.Far,
+	Med = ShirouSettings.Revolver.Med,
+	Close = ShirouSettings.Revolver.Close
 },
 	SMG = { -- // Smg
-	Far = Shirou.Settings.SMG.Far,
-	Med = Shirou.Settings.SMG.Med,
-	Close = Shirou.Settings.SMG.Close
+	Far = ShirouSettings.SMG.Far,
+	Med = ShirouSettings.SMG.Med,
+	Close = ShirouSettings.SMG.Close
 },
 	TacticalShotgun = { -- // TacticalShotgun
-	Far = Shirou.Settings.TacticalShotgun.Far,
-	Med = Shirou.Settings.TacticalShotgun.Med,
-	Close = Shirou.Settings.TacticalShotgun.Close
+	Far = ShirouSettings.TacticalShotgun.Far,
+	Med = ShirouSettings.TacticalShotgun.Med,
+	Close = ShirouSettings.TacticalShotgun.Close
 },
 	Rifle = { -- // Rifle
-	Far = Shirou.Settings.Rifle.Far,
-	Med = Shirou.Settings.Rifle.Med,
-	Close = Shirou.Settings.Rifle.Close
+	Far = ShirouSettings.Rifle.Far,
+	Med = ShirouSettings.Rifle.Med,
+	Close = ShirouSettings.Rifle.Close
 },
 
 ------- AIM ASSIST / CAMLOCK -------
 
-	AimAssistEnabled = Shirou.Settings.AimAssistEnabled,
-    Key = Shirou.Settings.Key,
+	AimAssistEnabled = ShirouSettings.AimAssistEnabled,
+    ASKeyBind = ShirouSettings.ASKeyBind,
 	AS_Show_Fov = false,
 	ASFov_Filled = false,
-    Radius = Shirou.Settings.Radius,
-	UseShake = Shirou.Settings.UseShake,
-	ShakeValue = Shirou.Settings.ShakeValue,
-	ASPredictMovement = Shirou.Settings.ASPredictMovement,
-	ASWallCheck = Shirou.Settings.ASWallCheck,
-    DisableOutSideCircle = Shirou.Settings.DisableOutSideCircle,
-    Smoothness_X = Shirou.Settings.Smoothness_X,
-	Smoothness_Y = Shirou.Settings.Smoothness_Y,
+    Radius = ShirouSettings.Radius,
+	UseShake = ShirouSettings.UseShake,
+	ShakeValue = ShirouSettings.ShakeValue,
+	EnablePrediction = ShirouSettings.EnablePrediction,
+	ASWallCheck = true,
+    DisableOutSideCircle = false,
+    Smoothness_X = ShirouSettings.Smoothness_X,
+	Smoothness_Y = ShirouSettings.Smoothness_Y,
 
-    ASPrediction = Shirou.Settings.ASPrediction,
+    ASPrediction = ShirouSettings.ASPrediction,
 
-    ClosestMousePoint = Shirou.Settings.ClosestMousePoint,
-},
+    ClosestMousePoint = ShirouSettings.ClosestMousePoint,
 }
+
+getgenv = getgenv
+Drawing = Drawing
+mouse1click = mouse1click
+mouse1press = mouse1press
+hookmetamethod = hookmetamethod
+checkcaller = checkcaller
+mousemoverel = mousemoverel
+
+-- // Variables (Too Lazy To Make It To One Local)
+local DoubleBarrel = "Double-Barrel SG"
+local Shirou = getgenv().Shirou
+local OldSilentAimPart = ShirouSettings.HitParts
+local ClosestPointCF, SilentTarget, AimTarget, DetectedDesync, DetectedDesyncV2, DetectedUnderGround, DetectedUnderGroundV2, DetectedFreeFall, Anti_AimViewer = CFrame.new(), nil, nil, false, false, false, false, false, true
+local Script = {Functions = {}, Friends = {}, Drawing = {}, EspPlayers = {}}
+
+local Players, Client, Mouse, RS, Camera, GuiS, Uis, Ran = game:GetService("Players"), game:GetService("Players").LocalPlayer, game:GetService("Players").LocalPlayer:GetMouse(), game:GetService("RunService"), game:GetService("Workspace").CurrentCamera, game:GetService("GuiService"), game:GetService("UserInputService"), math.random
+
+-- // Drawing For AimAssist And SilentAim
+Script.Drawing.SilentCircle = Drawing.new("Circle")
+Script.Drawing.SilentCircle.Color = Color3.new(1,1,1)
+Script.Drawing.SilentCircle.Thickness = 1
+
+Script.Drawing.AimAssistCircle = Drawing.new("Circle")
+Script.Drawing.AimAssistCircle.Color = Color3.new(1,1,1)
+Script.Drawing.AimAssistCircle.Thickness = 1
+
+--// Update Size/Position Of Circle
+Script.Functions.UpdateFOV = function()
+	if (not Script.Drawing.SilentCircle and not Script.Drawing.AimAssistCircle) then
+		return Script.Drawing.SilentCircle and Script.Drawing.AimAssistCircle
+	end
+
+	Script.Drawing.AimAssistCircle.Visible = ShirouSettings.AS_Show_Fov
+	Script.Drawing.AimAssistCircle.Filled = ShirouSettings.ASFov_Filled
+	Script.Drawing.AimAssistCircle.Color = ShirouSettings.ASColor
+	Script.Drawing.AimAssistCircle.Transparency = ShirouSettings.ASTransparency
+	Script.Drawing.AimAssistCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
+	Script.Drawing.AimAssistCircle.Radius = ShirouSettings.Radius * 3
+
+	Script.Drawing.SilentCircle.Visible = ShirouSettings.Show_Fov
+	Script.Drawing.SilentCircle.Color = ShirouSettings.Color
+	Script.Drawing.SilentCircle.Filled = ShirouSettings.Fov_Filled
+	Script.Drawing.SilentCircle.Transparency = ShirouSettings.Transparency
+	Script.Drawing.SilentCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
+	Script.Drawing.SilentCircle.Radius = ShirouSettings.Fov_Size * 3
+
+	if ShirouSettings.EnableRangeFOV then
+		local CurrentGun = Script.Functions.GetCurrentWeaponName()
+		if ShirouSettings.EnableRangeFOV then
+			local WeaponSettingsV2 = ShirouSettings[CurrentGun]
+			if WeaponSettingsV2 ~= nil then
+				if Script.Functions.Alive(SilentTarget) and Script.Functions.Alive(Client) then
+					local Magnitude = (SilentTarget.Character.HumanoidRootPart.Position - Client.Character.HumanoidRootPart.Position).Magnitude
+					if Magnitude < ShirouSettings.Close_Activation then
+						ShirouSettings.Radius = WeaponSettingsV2.Close
+					elseif Magnitude < ShirouSettings.Medium_Activation then
+						ShirouSettings.Radius = WeaponSettingsV2.Med
+					elseif Magnitude < ShirouSettings.Far_Activation then
+						ShirouSettings.Radius = WeaponSettingsV2.Far
+					end
+				end
+			end
+		end
+	end
+end
 
     --// Check if lock is loaded
     if getgenv().LoadShirou == true then
-		if Shirou.Settings.Enabled_Notification then
+		if ShirouSettings.Enabled_Notification then
 		game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "Shirou";
 		Text = "Shirous lock is already loaded.";
@@ -149,7 +217,7 @@ getgenv().Shirou = { Settings = {
 		
 		getgenv().LoadShirou = true
 		
-if Shirou.Settings.Enabled_Notification then
+if ShirouSettings.Enabled_Notification then
 		game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "Shirous lock loaded";
 		Text = "食肉#0001";
@@ -158,37 +226,11 @@ if Shirou.Settings.Enabled_Notification then
 	})
 end
 
-getgenv = getgenv
-Drawing = Drawing
-mouse1click = mouse1click
-mouse1press = mouse1press
-hookmetamethod = hookmetamethod
-checkcaller = checkcaller
-mousemoverel = mousemoverel
-
--- // Variables (Too Lazy To Make It To One Local)
-local DoubleBarrel = "Double-Barrel SG"
-local Shirou = getgenv().Shirou
-local OldSilentAimPart = Shirou.Settings.HitParts
-local ClosestPointCF, SilentTarget, AimTarget, DetectedDesync, DetectedDesyncV2, DetectedUnderGround, DetectedUnderGroundV2, DetectedFreeFall, Anti_AimViewer = CFrame.new(), nil, nil, false, false, false, false, false, true
-local Script = {Functions = {}, Friends = {}, Drawing = {}, EspPlayers = {}}
-
-local Players, Client, Mouse, RS, Camera, GuiS, Uis, Ran = game:GetService("Players"), game:GetService("Players").LocalPlayer, game:GetService("Players").LocalPlayer:GetMouse(), game:GetService("RunService"), game:GetService("Workspace").CurrentCamera, game:GetService("GuiService"), game:GetService("UserInputService"), math.random
-
--- // Drawing For AimAssist And SilentAim
-Script.Drawing.SilentCircle = Drawing.new("Circle")
-Script.Drawing.SilentCircle.Color = Color3.new(1,1,1)
-Script.Drawing.SilentCircle.Thickness = 1
-
-Script.Drawing.AimAssistCircle = Drawing.new("Circle")
-Script.Drawing.AimAssistCircle.Color = Color3.new(1,1,1)
-Script.Drawing.AimAssistCircle.Thickness = 1
-
 -- // KeyDown Check
 Mouse.KeyDown:Connect(function(Key)
-	local Keybind = Shirou.Settings.Key:lower()
+	local Keybind = ShirouSettings.ASKeyBind:lower()
 	if Key == Keybind then
-		if Shirou.Settings.Enabled then
+		if ShirouSettings.Enabled then
 			IsTargetting = not IsTargetting
 			if IsTargetting then
 				Script.Functions.GetClosestPlayer2()
@@ -200,75 +242,75 @@ Mouse.KeyDown:Connect(function(Key)
 			end
 		end
 	end
-	local Keybind2 = Shirou.Settings.KeyBind:lower()
-	if Key == Keybind2 and Shirou.Settings.UseKeybind then
-		Shirou.Settings.Enabled = not Shirou.Settings.Enabled
-		if Shirou.Settings.Enabled_Notification then
+	local Keybind2 = ShirouSettings.KeyBind:lower()
+	if Key == Keybind2 and ShirouSettings.UseKeybind then
+		ShirouSettings.Enabled = not ShirouSettings.Enabled
+		if ShirouSettings.Enabled_Notification then
 			game.StarterGui:SetCore("SendNotification",{
 				Title = "Shirous Lock",
-				Text = "" .. tostring(Shirou.Settings.Enabled),
+				Text = "" .. tostring(ShirouSettings.Enabled),
 				Icon = "",
 				Duration = 1
 			})
 		end
 	end
-	local Keybind3 = Shirou.Settings.UnderGroundKey:lower()
-	if Key == Keybind3 and Shirou.Settings.UseUnderGroundKeybind then
-		Shirou.Settings.DetectUnderGround = not Shirou.Settings.DetectUnderGround
-		if Shirou.Settings.Enabled_Notification then
+	local Keybind3 = ShirouSettings.UnderGroundKey:lower()
+	if Key == Keybind3 and ShirouSettings.UseUnderGroundKeybind then
+		ShirouSettings.DetectUnderGround = not ShirouSettings.DetectUnderGround
+		if ShirouSettings.Enabled_Notification then
 			game.StarterGui:SetCore("SendNotification",{
 				Title = "Shirous UG Resolver",
-				Text = "" .. tostring(Shirou.Settings.DetectUnderGround),
+				Text = "" .. tostring(ShirouSettings.DetectUnderGround),
 				Icon = "",
 				Duration = 1
 			})
 		end
 	end
-	local Keybind4 = Shirou.Settings.DetectDesyncKey:lower()
-	if Key == Keybind4 and Shirou.Settings.UseDetectDesyncKeybind then
-		Shirou.Settings.DetectDesync = not Shirou.Settings.DetectDesync
-		if Shirou.Settings.Enabled_Notification then
+	local Keybind4 = ShirouSettings.DetectDesyncKey:lower()
+	if Key == Keybind4 and ShirouSettings.UseDetectDesyncKeybind then
+		ShirouSettings.DetectDesync = not ShirouSettings.DetectDesync
+		if ShirouSettings.Enabled_Notification then
 			game.StarterGui:SetCore("SendNotification",{
 				Title = "Shirous Desync Resolver",
-				Text = "" .. tostring(Shirou.Settings.DetectDesync),
+				Text = "" .. tostring(ShirouSettings.DetectDesync),
 				Icon = "",
 				Duration = 1
 			})
 		end
 	end
-	local Keybind5 = Shirou.Settings.LayKeybind:lower()
-	if Key == Keybind5 and Shirou.Settings.UseLay then
+	local Keybind5 = ShirouSettings.LayKeybind:lower()
+	if Key == Keybind5 and ShirouSettings.UseLay then
 		local Args = {
 			[1] = "AnimationPack",
 			[2] = "Lay"
 		}
 		game:GetService("ReplicatedStorage"):FindFirstChild("MainEvent"):FireServer(unpack(Args))
 	end
-	local Keybind6 = Shirou.Settings.EspKey:lower()
-	if Key == Keybind6 and Shirou.Settings.UseEspKeybind then
-		if Shirou.Settings.ESPHoldMode then
-			Shirou.Settings.ESP = true
+	local Keybind6 = ShirouSettings.EspKey:lower()
+	if Key == Keybind6 and ShirouSettings.UseEspKeybind then
+		if ShirouSettings.ESPHoldMode then
+			ShirouSettings.ESP = true
 		else
-			Shirou.Settings.ESP = not Shirou.Settings.ESP
+			ShirouSettings.ESP = not ShirouSettings.ESP
 		end
 	end
 end)
 
 -- // KeyUp Check
 Mouse.KeyUp:Connect(function(Key)
-	local Keybind = Shirou.Settings.EspKey:lower()
-	if Key == Keybind and Shirou.Settings.UseEspKeybind and Shirou.Settings.ESPHoldMode then
-		Shirou.Settings.ESP = false
+	local Keybind = ShirouSettings.EspKey:lower()
+	if Key == Keybind and ShirouSettings.UseEspKeybind and ShirouSettings.ESPHoldMode then
+		ShirouSettings.ESP = false
 	end
-	local Keybind2 = Shirou.Settings.Key:lower()
-	if Key == Keybind2 and Shirou.Settings.AimAssistEnabled and Shirou.Settings.HoldMode then
+	local Keybind2 = ShirouSettings.ASKeyBind:lower()
+	if Key == Keybind2 and ShirouSettings.AimAssistEnabled and ShirouSettings.HoldMode then
 		IsTargetting = false
 		AimTarget = nil
 	end
 end)
 
 -- // Disabled If AntiAimViewer Is On
-if Shirou.Settings.Anti_AimViewer then
+if ShirouSettings.Anti_AimViewer then
 	Anti_AimViewer = false
 else
 	Anti_AimViewer = true
@@ -276,7 +318,7 @@ end
 
 -- // Blocks Mouse Triggering
 game:GetService("ContextActionService"):BindActionAtPriority("LeftMouseBlock", function()
-	if Anti_AimViewer == false and Shirou.Settings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
+	if Anti_AimViewer == false and ShirouSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
 		return Enum.ContextActionResult.Sink
 	else
 		return Enum.ContextActionResult.Pass
@@ -285,10 +327,10 @@ end, true, Enum.ContextActionPriority.Low.Value, Enum.UserInputType.MouseButton1
 
 -- // Delaying The Mouse Trigger
 Uis.InputBegan:connect(function(input)
-	if input.UserInputType == Enum.UserInputType[Shirou.Settings.TriggerBotKey] and Shirou.Settings.UseTriggerBotKeybind then
-		Shirou.Settings.TriggerBot = true
+	if input.UserInputType == Enum.UserInputType[ShirouSettings.TriggerBotKey] and ShirouSettings.UseTriggerBotKeybind then
+		ShirouSettings.TriggerBot = true
 	end
-	if input.UserInputType == Enum.UserInputType.MouseButton1 and Shirou.Settings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
+	if input.UserInputType == Enum.UserInputType.MouseButton1 and ShirouSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
 		if Anti_AimViewer == false then
 			Anti_AimViewer = true
 			mouse1click()
@@ -304,10 +346,10 @@ end)
 
 -- // Helps With Automatics
 Uis.InputEnded:connect(function(input)
-	if input.UserInputType == Enum.UserInputType[Shirou.Settings.TriggerBotKey] and Shirou.Settings.UseTriggerBotKeybind then
-		Shirou.Settings.TriggerBot = true
+	if input.UserInputType == Enum.UserInputType[ShirouSettings.TriggerBotKey] and ShirouSettings.UseTriggerBotKeybind then
+		ShirouSettings.TriggerBot = true
 	end
-	if input.UserInputType == Enum.UserInputType.MouseButton1 and Shirou.Settings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
+	if input.UserInputType == Enum.UserInputType.MouseButton1 and ShirouSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
 		if Anti_AimViewer == false then
 			Anti_AimViewer = true
 			mouse1click()
@@ -479,7 +521,7 @@ end
 Script.Functions.GetClosestPlayer = function()
 	local Target = nil
 	local Closest = math.huge
-	local HitChance = Script.Functions.CalculateChance(Shirou.Settings.HitChance)
+	local HitChance = Script.Functions.CalculateChance(ShirouSettings.HitChance)
 
 	if not HitChance then
 		return nil
@@ -489,35 +531,35 @@ Script.Functions.GetClosestPlayer = function()
 			if not Script.Functions.OnScreen(v.Character.HumanoidRootPart) then 
 				continue 
 			end
-			if Shirou.Settings.WallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
+			if ShirouSettings.WallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
 				continue 
 			end
-			if Shirou.Settings.CheckIf_KO and v.Character:FindFirstChild("BodyEffects") then
+			if ShirouSettings.K_O_Check and v.Character:FindFirstChild("BodyEffects") then
 				local KoCheck = v.Character.BodyEffects:FindFirstChild("K.O").Value
 				local Grabbed = v.Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
 				if KoCheck or Grabbed then
 					continue
 				end
 			end
-			if Shirou.Settings.CheckIf_TargetDeath and v.Character:FindFirstChild("Humanoid") then
+			if ShirouSettings.K_O_Check and v.Character:FindFirstChild("Humanoid") then
 				if v.Character.Humanoid.health < 4 then
 					continue
 				end
 			end
-			if Shirou.Settings.VisibleCheck and v.Character:FindFirstChild("Head") then
+			if ShirouSettings.VisibleCheck and v.Character:FindFirstChild("Head") then
 				if v.Character.Head.Transparency > 0.5 then
 					continue
 				end
 			end
-			if Shirou.Settings.Crew_Whitelist and Script.Functions.FindCrew(v) and v.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
+			if ShirouSettings.Crew_Whitelist and Script.Functions.FindCrew(v) and v.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
 				continue
 			end
-			if Shirou.Settings.TeamCheck then
+			if ShirouSettings.TeamCheck then
 				if v.Team ~= Client.Team then
 					continue
 				end
 			end
-			if Shirou.Settings.Friends_Whitelist then
+			if ShirouSettings.Friends_Whitelist then
 				if not table.find(Script.Friends, v.UserId) then
 					continue
 				end
@@ -545,13 +587,13 @@ Script.Functions.GetClosestPlayer2 = function()
 			if not Script.Functions.OnScreen(v.Character.HumanoidRootPart) then 
 				continue 
 			end
-			if Shirou.Settings.ASWallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
+			if ShirouSettings.ASWallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
 				continue 
 			end
 			local Distance = Script.Functions.GetMagnitudeFromMouse(v.Character.HumanoidRootPart)
 
 			if Distance < Closest then
-				if (Shirou.Settings.UseCircleRadius and Script.Drawing.AimAssistCircle.Radius + 10 < Distance) then continue end
+				if (ShirouSettings.UseCircleRadius and Script.Drawing.AimAssistCircle.Radius + 10 < Distance) then continue end
 				Closest = Distance
 				Target = v
 			end
@@ -559,21 +601,21 @@ Script.Functions.GetClosestPlayer2 = function()
 	end
 
 	if Script.Functions.Alive(Target) then
-		if Shirou.Settings.VisibleCheck then
+		if ShirouSettings.VisibleCheck then
 			if Target.Character.Head.Transparency > 0.5 then
 				return nil
 			end
 		end
-		if Shirou.Settings.Crew_Whitelist and Script.Functions.FindCrew(Target) and Target.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
+		if ShirouSettings.Crew_Whitelist and Script.Functions.FindCrew(Target) and Target.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
 			return nil
 		end
 	end
-	if Shirou.Settings.TeamCheck and Target then
+	if ShirouSettings.TeamCheck and Target then
 		if Target.Team == Client.Team then
 			return nil
 		end
 	end
-	if Shirou.Settings.Friends_Whitelist then
+	if ShirouSettings.Friends_Whitelist then
 		if table.find(Script.Friends, Target.UserId) then
 			return nil
 		end
@@ -585,23 +627,23 @@ end
 -- // Server Side Mouse Position Changer
 local OldIndex = nil 
 OldIndex = hookmetamethod(game, "__index", function(self, Index)
-	if not checkcaller() and Mouse and self == Mouse and Index == "Hit" and Shirou.Settings.Enabled and Anti_AimViewer then
-		if Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(Shirou.Settings.HitParts) then
+	if not checkcaller() and Mouse and self == Mouse and Index == "Hit" and ShirouSettings.Enabled and Anti_AimViewer then
+		if Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(ShirouSettings.HitParts) then
 			local EndPoint = nil
 			local TargetCF = nil
 			local TargetVel = Players[tostring(SilentTarget)].Character.HumanoidRootPart.Velocity
 			local TargetMov = Players[tostring(SilentTarget)].Character.Humanoid.MoveDirection
 
-			if Shirou.Settings.ClosestPoint then
+			if ShirouSettings.ClosestPoint then
 				TargetCF = ClosestPointCF
 			else
-				TargetCF = Players[tostring(SilentTarget)].Character[Shirou.Settings.HitParts].CFrame
+				TargetCF = Players[tostring(SilentTarget)].Character[ShirouSettings.HitParts].CFrame
 			end
 
-			if Shirou.Settings.DetectDesync then
+			if ShirouSettings.DetectDesync then
 				local Magnitude = TargetVel.magnitude
 				local Magnitude2 = TargetMov.magnitude
-				if Magnitude > Shirou.Settings.DesyncDetection then
+				if Magnitude > ShirouSettings.DesyncDetection then
 					DetectedDesync = true
 				else
 					DetectedDesync = false
@@ -609,15 +651,15 @@ OldIndex = hookmetamethod(game, "__index", function(self, Index)
 			else
 				DetectedDesync = false
 			end
-			if Shirou.Settings.AntiGroundShots then
-				if TargetVel.Y < Shirou.Settings.WhenAntiGroundActivate then
+			if ShirouSettings.AntiGroundShots then
+				if TargetVel.Y < ShirouSettings.WhenAntiGroundActivate then
 					DetectedFreeFall = true
 				else
 					DetectedFreeFall = false
 				end
 			end
-			if Shirou.Settings.DetectUnderGround then 
-				if TargetVel.Y < Shirou.Settings.UnderGroundDetection then            
+			if ShirouSettings.DetectUnderGround then 
+				if TargetVel.Y < ShirouSettings.UnderGroundDetection then            
 					DetectedUnderGround = true
 				else
 					DetectedUnderGround = false
@@ -629,18 +671,18 @@ OldIndex = hookmetamethod(game, "__index", function(self, Index)
 			if TargetCF ~= nil then
 				if DetectedDesync then
 					local MoveDirection = TargetMov * 16
-					EndPoint = TargetCF + (MoveDirection * Shirou.Settings.Prediction)
+					EndPoint = TargetCF + (MoveDirection * ShirouSettings.Prediction)
 				elseif DetectedUnderGround then
-					EndPoint = TargetCF + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * Shirou.Settings.Prediction)
+					EndPoint = TargetCF + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * ShirouSettings.Prediction)
 				elseif DetectedFreeFall then
-					EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * Shirou.Settings.AntiGroundValue), TargetVel.Z) * Shirou.Settings.Prediction)
-				elseif Shirou.Settings.PredictMovement then
-					EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * 0.5), TargetVel.Z) * Shirou.Settings.Prediction)
+					EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * ShirouSettings.AntiGroundValue), TargetVel.Z) * ShirouSettings.Prediction)
+				elseif ShirouSettings.PredictMovement then
+					EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * 0.5), TargetVel.Z) * ShirouSettings.Prediction)
 				else
 					EndPoint = TargetCF
 				end
-				if Shirou.Settings.Humanize then
-					local HumanizeValue = Shirou.Settings.HumanizeValue 
+				if ShirouSettings.Humanize then
+					local HumanizeValue = ShirouSettings.HumanizeValue 
 					EndPoint = (EndPoint + Script.Functions.RandomVec(HumanizeValue, 0.01))
 				end
 			end
@@ -655,74 +697,74 @@ end)
 
 -- // Silent Aim Misc
 Script.Functions.SilentMisc = function()
-	if Shirou.Settings.Enabled and Script.Functions.Alive(SilentTarget) then
-		if Shirou.Settings.UseAirPart then
+	if ShirouSettings.Enabled and Script.Functions.Alive(SilentTarget) then
+		if ShirouSettings.UseAirPart then
 			if SilentTarget.Character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
-				Shirou.Settings.HitParts = Shirou.Settings.AirPart
+				ShirouSettings.HitParts = ShirouSettings.AirPart
 			else
-				Shirou.Settings.HitParts = OldSilentAimPart
+				ShirouSettings.HitParts = OldSilentAimPart
 			end
 		end
-		if Shirou.Settings.TriggerBot then
+		if ShirouSettings.TriggerBot then
 			mouse1click()
 		end
 	end
-	if Shirou.Settings.Auto_prediction then
+	if ShirouSettings.Auto_prediction then
 		local ping = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())
 		if ping < 10 then
-			Shirou.Settings.Prediction = 0.07
+			ShirouSettings.Prediction = 0.07
 		elseif ping < 20 then
-			Shirou.Settings.Prediction = 0.155
+			ShirouSettings.Prediction = 0.155
 		elseif ping < 30 then
-			Shirou.Settings.Prediction = 0.132
+			ShirouSettings.Prediction = 0.132
 		elseif ping < 40 then
-			Shirou.Settings.Prediction = 0.136
+			ShirouSettings.Prediction = 0.136
 		elseif ping < 50 then
-			Shirou.Settings.Prediction = 0.130
+			ShirouSettings.Prediction = 0.130
 		elseif ping < 60 then
-			Shirou.Settings.Prediction = 0.136
+			ShirouSettings.Prediction = 0.136
 		elseif ping < 70 then
-			Shirou.Settings.Prediction = 0.138
+			ShirouSettings.Prediction = 0.138
 		elseif ping < 80 then
-			Shirou.Settings.Prediction = 0.138
+			ShirouSettings.Prediction = 0.138
 		elseif ping < 90 then
-			Shirou.Settings.Prediction = 0.146
+			ShirouSettings.Prediction = 0.146
 		elseif ping < 100 then
-			Shirou.Settings.Prediction = 0.14322
+			ShirouSettings.Prediction = 0.14322
 		elseif ping < 110 then
-			Shirou.Settings.Prediction = 0.146
+			ShirouSettings.Prediction = 0.146
 		elseif ping < 120 then
-			Shirou.Settings.Prediction = 0.149
+			ShirouSettings.Prediction = 0.149
 		elseif ping < 130 then
-			Shirou.Settings.Prediction = 0.151
+			ShirouSettings.Prediction = 0.151
 		elseif ping < 140 then
-			Shirou.Settings.Prediction = 0.1223333
+			ShirouSettings.Prediction = 0.1223333
 		elseif ping < 150 then
-			Shirou.Settings.Prediction = 0.15
+			ShirouSettings.Prediction = 0.15
 		elseif ping < 160 then
-			Shirou.Settings.Prediction = 0.16
+			ShirouSettings.Prediction = 0.16
 		elseif ping < 170 then
-			Shirou.Settings.Prediction = 0.1923111
+			ShirouSettings.Prediction = 0.1923111
 		elseif ping < 180 then
-			Shirou.Settings.Prediction = 0.19284
+			ShirouSettings.Prediction = 0.19284
 		elseif ping > 180 then
-			Shirou.Settings.Prediction = 0.166547
+			ShirouSettings.Prediction = 0.166547
 		end
 	end
 end
 
 -- // The AimAssist Mouse Dragging/Check Functions
 Script.Functions.MouseChanger = function()
-	if Shirou.Settings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and Players[tostring(AimTarget)].Character:FindFirstChild(Shirou.Settings.Part) and Script.Functions.OnScreen(Players[tostring(AimTarget)].Character[Shirou.Settings.Part]) then
+	if ShirouSettings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and Players[tostring(AimTarget)].Character:FindFirstChild(ShirouSettings.Part) and Script.Functions.OnScreen(Players[tostring(AimTarget)].Character[ShirouSettings.Part]) then
 		local EndPosition = nil
-		local TargetPos = Players[tostring(AimTarget)].Character[Shirou.Settings.Part].Position
-		local TargetVel = Players[tostring(AimTarget)].Character[Shirou.Settings.Part].Velocity
+		local TargetPos = Players[tostring(AimTarget)].Character[ShirouSettings.Part].Position
+		local TargetVel = Players[tostring(AimTarget)].Character[ShirouSettings.Part].Velocity
 		local TargetMov = Players[tostring(AimTarget)].Character.Humanoid.MoveDirection
 
-		if Shirou.Settings.DetectDesync then
+		if ShirouSettings.DetectDesync then
 			local Magnitude = TargetVel.magnitude
 			local Magnitude2 = TargetMov.magnitude
-			if Magnitude > Shirou.Settings.DesyncDetection then
+			if Magnitude > ShirouSettings.DesyncDetection then
 				DetectedDesyncV2 = true
 			elseif Magnitude < 1 and Magnitude2 > 0.01 then
 				DetectedDesyncV2 = true
@@ -734,8 +776,8 @@ Script.Functions.MouseChanger = function()
 		else
 			DetectedDesyncV2 = false
 		end
-		if Shirou.Settings.DetectUnderGround then 
-			if TargetVel.Y < Shirou.Settings.UnderGroundDetection then            
+		if ShirouSettings.DetectUnderGround then 
+			if TargetVel.Y < ShirouSettings.UnderGroundDetection then            
 				DetectedUnderGroundV2 = true
 			else
 				DetectedUnderGroundV2 = false
@@ -745,14 +787,14 @@ Script.Functions.MouseChanger = function()
 		end
 
 		if Script.Functions.Alive(Client) then
-			if Shirou.Settings.DisableLocalDeath then
+			if ShirouSettings.KnockedCheck then
 				if Client.Character.Humanoid.health < 4 then
 					AimTarget = nil
 					IsTargetting = false
 					return
 				end
 			end
-			if Shirou.Settings.DisableOutSideCircle then
+			if ShirouSettings.DisableOutSideCircle then
 				local Magnitude = Script.Functions.GetMagnitudeFromMouse(AimTarget.Character.HumanoidRootPart)
 				if Script.Drawing.AimAssistCircle.Radius < Magnitude then
 					AimTarget = nil
@@ -762,7 +804,7 @@ Script.Functions.MouseChanger = function()
 			end
 		end
 
-		if Shirou.Settings.DisableOn_KO and AimTarget.Character:FindFirstChild("BodyEffects") then 
+		if ShirouSettings.KnockedCheck and AimTarget.Character:FindFirstChild("BodyEffects") then 
 			local KoCheck = AimTarget.Character.BodyEffects:FindFirstChild("K.O").Value
 			local Grabbed = AimTarget.Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
 			if KoCheck or Grabbed then
@@ -771,7 +813,7 @@ Script.Functions.MouseChanger = function()
 				return
 			end
 		end
-		if Shirou.Settings.DisableTargetDeath then
+		if ShirouSettings.KnockedCheck then
 			if AimTarget.Character.Humanoid.health < 4 then
 				AimTarget = nil
 				IsTargetting = false
@@ -779,22 +821,22 @@ Script.Functions.MouseChanger = function()
 			end
 		end
 
-		if DetectedDesyncV2 and Shirou.Settings.ASPredictMovement then
+		if DetectedDesyncV2 and ShirouSettings.EnablePrediction then
 			local MoveDirection = TargetMov * 16
-			EndPosition = Camera:WorldToScreenPoint(TargetPos + (MoveDirection * Shirou.Settings.Prediction))
-		elseif DetectedUnderGroundV2 and Shirou.Settings.ASPredictMovement then
-			EndPosition = Camera:WorldToScreenPoint(TargetPos + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * Shirou.Settings.Prediction))
-		elseif Shirou.Settings.ASPredictMovement then
-			if Shirou.Settings.UseShake and Script.Functions.Alive(Client) then
-				local Shake = Shirou.Settings.ShakeValue / 100
+			EndPosition = Camera:WorldToScreenPoint(TargetPos + (MoveDirection * ShirouSettings.Prediction))
+		elseif DetectedUnderGroundV2 and ShirouSettings.EnablePrediction then
+			EndPosition = Camera:WorldToScreenPoint(TargetPos + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * ShirouSettings.Prediction))
+		elseif ShirouSettings.EnablePrediction then
+			if ShirouSettings.UseShake and Script.Functions.Alive(Client) then
+				local Shake = ShirouSettings.ShakeValue / 100
 				local Mag = math.ceil((TargetPos - Client.Character.HumanoidRootPart.Position).Magnitude)
-				EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * Shirou.Settings.Prediction) + Script.Functions.RandomVec(Mag * Shake, 0.1))
+				EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * ShirouSettings.Prediction) + Script.Functions.RandomVec(Mag * Shake, 0.1))
 			else
-				EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * Shirou.Settings.Prediction))
+				EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * ShirouSettings.Prediction))
 			end
 		else
-			if Shirou.Settings.UseShake and Script.Functions.Alive(Client) then
-				local Shake = Shirou.Settings.ShakeValue / 100
+			if ShirouSettings.UseShake and Script.Functions.Alive(Client) then
+				local Shake = ShirouSettings.ShakeValue / 100
 				local Mag = math.ceil((TargetPos - Client.Character.HumanoidRootPart.Position).Magnitude)
 				EndPosition = Camera:WorldToScreenPoint(TargetPos + Script.Functions.RandomVec(Mag * Shake, 0.1))
 			else
@@ -803,49 +845,9 @@ Script.Functions.MouseChanger = function()
 		end
 
 		if EndPosition ~= nil then
-			local InCrementX = (EndPosition.X - Mouse.X) * Shirou.Settings.Smoothness_X
-			local InCrementY = (EndPosition.Y - Mouse.Y) * Shirou.Settings.Smoothness_Y
+			local InCrementX = (EndPosition.X - Mouse.X) * ShirouSettings.Smoothness_X
+			local InCrementY = (EndPosition.Y - Mouse.Y) * ShirouSettings.Smoothness_Y
 			mousemoverel(InCrementX, InCrementY)
-		end
-	end
-end
-
---// Update Size/Position Of Circle
-Script.Functions.UpdateFOV = function()
-	if (not Script.Drawing.SilentCircle and not Script.Drawing.AimAssistCircle) then
-		return Script.Drawing.SilentCircle and Script.Drawing.AimAssistCircle
-	end
-
-	Script.Drawing.AimAssistCircle.Visible = Shirou.Settings.AS_Show_Fov
-	Script.Drawing.AimAssistCircle.Filled = Shirou.Settings.ASFov_Filled
-	Script.Drawing.AimAssistCircle.Color = Shirou.Settings.ASColor
-	Script.Drawing.AimAssistCircle.Transparency = Shirou.Settings.ASTransparency
-	Script.Drawing.AimAssistCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
-	Script.Drawing.AimAssistCircle.Radius = Shirou.Settings.Radius * 3
-
-	Script.Drawing.SilentCircle.Visible = Shirou.Settings.Show_Fov
-	Script.Drawing.SilentCircle.Color = Shirou.Settings.Color
-	Script.Drawing.SilentCircle.Filled = Shirou.Settings.Fov_Filled
-	Script.Drawing.SilentCircle.Transparency = Shirou.Settings.Transparency
-	Script.Drawing.SilentCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
-	Script.Drawing.SilentCircle.Radius = Shirou.Settings.Fov_Size * 3
-
-	if Shirou.Settings.EnableRangeFOV then
-		local CurrentGun = Script.Functions.GetCurrentWeaponName()
-		if Shirou.Settings.EnableRangeFOV then
-			local WeaponSettingsV2 = Shirou.Settings[CurrentGun]
-			if WeaponSettingsV2 ~= nil then
-				if Script.Functions.Alive(SilentTarget) and Script.Functions.Alive(Client) then
-					local Magnitude = (SilentTarget.Character.HumanoidRootPart.Position - Client.Character.HumanoidRootPart.Position).Magnitude
-					if Magnitude < Shirou.Settings.Close_Activation then
-						Shirou.Settings.Radius = WeaponSettingsV2.Close
-					elseif Magnitude < Shirou.Settings.Medium_Activation then
-						Shirou.Settings.Radius = WeaponSettingsV2.Med
-					elseif Magnitude < Shirou.Settings.Far_Activation then
-						Shirou.Settings.Radius = WeaponSettingsV2.Far
-					end
-				end
-			end
 		end
 	end
 end
@@ -853,7 +855,7 @@ end
 -- // Updates Esp Posistions
 Script.Functions.UpdateEsp = function()
 	for i,v in pairs(Script.EspPlayers) do
-		if Shirou.Settings.ESP and i ~= Client and i.Character and i.Character:FindFirstChild("Humanoid") and i.Character:FindFirstChild("HumanoidRootPart") and i.Character:FindFirstChild("Head") then
+		if ShirouSettings.ESP and i ~= Client and i.Character and i.Character:FindFirstChild("Humanoid") and i.Character:FindFirstChild("HumanoidRootPart") and i.Character:FindFirstChild("Head") then
 			local Hum = i.Character.Humanoid
 			local Hrp = i.Character.HumanoidRootPart
 
@@ -864,11 +866,11 @@ Script.Functions.UpdateEsp = function()
 			local BottomOffset = BoxSize.Y + BoxPos.Y + 1
 
 			if OnScreen then
-				if Shirou.Settings.Name.Enabled then
+				if ShirouSettings.Name.Enabled then
 					v.Name.Position = Vector2.new(BoxSize.X / 2 + BoxPos.X, BoxPos.Y - 16)
-					v.Name.Outline = Shirou.Settings.Name.OutLine
+					v.Name.Outline = ShirouSettings.Name.OutLine
 					v.Name.Text = tostring(i)
-					v.Name.Color = Shirou.Settings.Name.Color
+					v.Name.Color = ShirouSettings.Name.Color
 					v.Name.OutlineColor = Color3.fromRGB(0, 0, 0)
 					v.Name.Font = 0
 					v.Name.Size = 16
@@ -877,11 +879,11 @@ Script.Functions.UpdateEsp = function()
 				else
 					v.Name.Visible = false
 				end
-				if Shirou.Settings.Distance.Enabled and Client.Character and Client.Character:FindFirstChild("HumanoidRootPart") then
+				if ShirouSettings.Distance.Enabled and Client.Character and Client.Character:FindFirstChild("HumanoidRootPart") then
 					v.Distance.Position = Vector2.new(BoxSize.X / 2 + BoxPos.X, BottomOffset)
-					v.Distance.Outline = Shirou.Settings.Distance.OutLine
+					v.Distance.Outline = ShirouSettings.Distance.OutLine
 					v.Distance.Text = "[" .. math.floor((Hrp.Position - Client.Character.HumanoidRootPart.Position).Magnitude) .. "m]"
-					v.Distance.Color = Shirou.Settings.Distance.Color
+					v.Distance.Color = ShirouSettings.Distance.Color
 					v.Distance.OutlineColor = Color3.fromRGB(0, 0, 0)
 					BottomOffset = BottomOffset + 15
 
@@ -892,40 +894,40 @@ Script.Functions.UpdateEsp = function()
 				else
 					v.Distance.Visible = false
 				end
-				if Shirou.Settings.Box.Enabled then
+				if ShirouSettings.Box.Enabled then
 					v.BoxOutline.Size = BoxSize
 					v.BoxOutline.Position = BoxPos
-					v.BoxOutline.Visible = Shirou.Settings.Box.OutLine
+					v.BoxOutline.Visible = ShirouSettings.Box.OutLine
 					v.BoxOutline.Color = Color3.fromRGB(0, 0, 0)
 
 					v.Box.Size = BoxSize
 					v.Box.Position = BoxPos
-					v.Box.Color = Shirou.Settings.Box.Color
+					v.Box.Color = ShirouSettings.Box.Color
 					v.Box.Visible = true
 				else
 					v.BoxOutline.Visible = false
 					v.Box.Visible = false
 				end
-				if Shirou.Settings.HealthBar.Enabled then
+				if ShirouSettings.HealthBar.Enabled then
 					v.HealthBar.From = Vector2.new((BoxPos.X - 5), BoxPos.Y + BoxSize.Y)
 					v.HealthBar.To = Vector2.new(v.HealthBar.From.X, v.HealthBar.From.Y - (Hum.Health / Hum.MaxHealth) * BoxSize.Y)
-					v.HealthBar.Color = Shirou.Settings.HealthBar.Color
+					v.HealthBar.Color = ShirouSettings.HealthBar.Color
 					v.HealthBar.Visible = true
 
 					v.HealthBarOutline.From = Vector2.new(v.HealthBar.From.X, BoxPos.Y + BoxSize.Y + 1)
 					v.HealthBarOutline.To = Vector2.new(v.HealthBar.From.X, (v.HealthBar.From.Y - 1 * BoxSize.Y) -1)
 					v.HealthBarOutline.Color = Color3.fromRGB(0, 0, 0)
-					v.HealthBarOutline.Visible = Shirou.Settings.HealthBar.OutLine
+					v.HealthBarOutline.Visible = ShirouSettings.HealthBar.OutLine
 				else
 					v.HealthBarOutline.Visible = false
 					v.healthBar.Visible = false
 				end
-				if Shirou.Settings.HealthText.Enabled then
+				if ShirouSettings.HealthText.Enabled then
 					v.HealthText.Text = tostring(math.floor((Hum.Health / Hum.MaxHealth) * 100 + 0.5))
 					v.HealthText.Position = Vector2.new((BoxPos.X - 20), (BoxPos.Y + BoxSize.Y - 1 * BoxSize.Y) -1)
-					v.HealthText.Color = Shirou.Settings.HealthText.Color
+					v.HealthText.Color = ShirouSettings.HealthText.Color
 					v.HealthText.OutlineColor = Color3.fromRGB(0, 0, 0)
-					v.HealthText.Outline = Shirou.Settings.HealthText.OutLine
+					v.HealthText.Outline = ShirouSettings.HealthText.OutLine
 
 					v.HealthText.Font = 0
 					v.HealthText.Size = 16
@@ -966,27 +968,27 @@ end)
 RS.RenderStepped:Connect(function()
 	Script.Functions.UpdateEsp()
 	Script.Functions.UpdateFOV()
-	if Shirou.Settings.Enabled and Shirou.Settings.ClosestPoint and Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(Shirou.Settings.HitParts) then
-		local ClosestPoint = Script.Functions.GetClosestPointOfPart(Players[tostring(SilentTarget)].Character[Shirou.Settings.HitParts])
+	if ShirouSettings.Enabled and ShirouSettings.ClosestPoint and Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(ShirouSettings.HitParts) then
+		local ClosestPoint = Script.Functions.GetClosestPointOfPart(Players[tostring(SilentTarget)].Character[ShirouSettings.HitParts])
 		ClosestPointCF = CFrame.new(ClosestPoint.X, ClosestPoint.Y, ClosestPoint.Z)
 	end
-	if Shirou.Settings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and Shirou.Settings.ClosestMousePoint and Script.Functions.Alive(SilentTarget) then
+	if ShirouSettings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and ShirouSettings.ClosestMousePoint and Script.Functions.Alive(SilentTarget) then
 		local currentpart = tostring(Script.Functions.GetClosestBodyPart(AimTarget.Character))
-		if Shirou.Settings.ClosestMousePoint then
-			Shirou.Settings.Part = currentpart
+		if ShirouSettings.ClosestMousePoint then
+			ShirouSettings.Part = currentpart
 		end
-		if Shirou.Settings.ClosestMousePoint then
-			Shirou.Settings.Part = currentpart
-			OldSilentAimPart = Shirou.Settings.Part
+		if ShirouSettings.ClosestMousePoint then
+			ShirouSettings.Part = currentpart
+			OldSilentAimPart = ShirouSettings.Part
 		end
 		return
 	end
-	if Shirou.Settings.AimAssistEnabled and Shirou.Settings.ClosestMousePoint and Script.Functions.Alive(AimTarget) then
-		Shirou.Settings.Part = tostring(Script.Functions.GetClosestBodyPart(AimTarget.Character))
+	if ShirouSettings.AimAssistEnabled and ShirouSettings.ClosestMousePoint and Script.Functions.Alive(AimTarget) then
+		ShirouSettings.Part = tostring(Script.Functions.GetClosestBodyPart(AimTarget.Character))
 	end
-	if Shirou.Settings.Enabled and Shirou.Settings.NearestHitPart and Script.Functions.Alive(SilentTarget) then
-		Shirou.Settings.HitParts = tostring(Script.Functions.GetClosestBodyPart(SilentTarget.Character))
-		OldSilentAimPart = Shirou.Settings.HitParts
+	if ShirouSettings.Enabled and ShirouSettings.NearestHitPart and Script.Functions.Alive(SilentTarget) then
+		ShirouSettings.HitParts = tostring(Script.Functions.GetClosestBodyPart(SilentTarget.Character))
+		OldSilentAimPart = ShirouSettings.HitParts
 	end
 end)
 
