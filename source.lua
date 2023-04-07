@@ -2,17 +2,6 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 
 repeat wait() until game:IsLoaded()
 
-if ShirouSettings.AntiMacroFling then
-local antimacrofling = game:GetService("RunService").Heartbeat:Connect(function()
-game:GetService("RunService").RenderStepped:Wait()
-game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
-end)
-end
-
-if not ShirouSettings.AntiMacroFling then
-antimacrofling:Disconnect()
-end
-
 getgenv().ShirouSettings = {
     AntiGroundShots = true, -- remove
     AntiGroundValue = 0.5, -- remove
@@ -224,6 +213,17 @@ if ShirouSettings.Enabled_Notification then
 		Icon = "";
 		Duration = 5
 	})
+end
+
+if ShirouSettings.AntiMacroFling then
+local antimacrofling = game:GetService("RunService").Heartbeat:Connect(function()
+game:GetService("RunService").RenderStepped:Wait()
+game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
+end)
+end
+
+if not ShirouSettings.AntiMacroFling then
+antimacrofling:Disconnect()
 end
 
 -- // KeyDown Check
