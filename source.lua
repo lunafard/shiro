@@ -112,6 +112,7 @@ getgenv().ShirouSettings = {
     DisableOutSideCircle = false,
     Smoothness_X = ShirouSettings.Smoothness_X,
 	Smoothness_Y = ShirouSettings.Smoothness_Y,
+	AntiMacroFling = ShirouSettings.AntiMacroFling,
 
     ASPrediction = ShirouSettings.ASPrediction,
 
@@ -215,14 +216,14 @@ if ShirouSettings.Enabled_Notification then
 	})
 end
 
-if ShirouSettings.AntiMacroFling then
+if getgenv().ShirouSettings.AntiMacroFling then
 local antimacrofling = game:GetService("RunService").Heartbeat:Connect(function()
 game:GetService("RunService").RenderStepped:Wait()
 game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
 end)
 end
 
-if not ShirouSettings.AntiMacroFling then
+if not getgenv().ShirouSettings.AntiMacroFling then
 antimacrofling:Disconnect()
 end
 
