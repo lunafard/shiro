@@ -73,29 +73,29 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 	
 		EnableRangeFOV = false,
 		DoubleBarrel = { -- // DB
-		Far = ShirouSettings.DoubleBarrel.Far,
-		Med = ShirouSettings.DoubleBarrel.Med,
-		Close = ShirouSettings.DoubleBarrel.Close
+		Far = 9,
+		Med = 9,
+		Close = 9
 	},
 		Revolver = { -- // Rev
-		Far = ShirouSettings.Revolver.Far,
-		Med = ShirouSettings.Revolver.Med,
-		Close = ShirouSettings.Revolver.Close
+		Far = 9,
+		Med = 9,
+		Close = 9
 	},
 		SMG = { -- // Smg
-		Far = ShirouSettings.SMG.Far,
-		Med = ShirouSettings.SMG.Med,
-		Close = ShirouSettings.SMG.Close
+		Far = 9,
+		Med = 9,
+		Close = 9
 	},
 		TacticalShotgun = { -- // TacticalShotgun
-		Far = ShirouSettings.TacticalShotgun.Far,
-		Med = ShirouSettings.TacticalShotgun.Med,
-		Close = ShirouSettings.TacticalShotgun.Close
+		Far = 9,
+		Med = 9,
+		Close = 9
 	},
 		Rifle = { -- // Rifle
-		Far = ShirouSettings.Rifle.Far,
-		Med = ShirouSettings.Rifle.Med,
-		Close = ShirouSettings.Rifle.Close
+		Far = 9,
+		Med = 9,
+		Close = 9
 	},
 	
 	------- AIM ASSIST / CAMLOCK -------
