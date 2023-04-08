@@ -128,7 +128,7 @@ mousemoverel = mousemoverel
 
 -- // Variables (Too Lazy To Make It To One Local)
 local DoubleBarrel = "Double-Barrel SG"
-local Shirou = getgenv().Shirou
+local ShirouSettings = getgenv().ShirouSettings
 local OldSilentAimPart = ShirouSettings.HitParts
 local ClosestPointCF, SilentTarget, AimTarget, DetectedDesync, DetectedDesyncV2, DetectedUnderGround, DetectedUnderGroundV2, DetectedFreeFall, Anti_AimViewer = CFrame.new(), nil, nil, false, false, false, false, false, true
 local Script = {Functions = {}, Friends = {}, Drawing = {}, EspPlayers = {}}
