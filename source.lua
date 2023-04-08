@@ -82,6 +82,7 @@ getgenv().ShirouSettings = {
     DisableOutSideCircle = false,
     Smoothness_X = ShirouSettings.Smoothness_X,
 	Smoothness_Y = ShirouSettings.Smoothness_Y,
+	AntiMacroFling = ShirouSettings.AntiMacroFling,
 
     ASPrediction = ShirouSettings.ASPrediction,
 
@@ -98,7 +99,7 @@ mousemoverel = mousemoverel
 
 -- // Variables (Too Lazy To Make It To One Local)
 local DoubleBarrel = "Double-Barrel SG"
-local ShirouSettings = getgenv().ShirouSettings
+local Shirou = getgenv().Shirou
 local OldSilentAimPart = ShirouSettings.HitParts
 local ClosestPointCF, SilentTarget, AimTarget, DetectedDesync, DetectedDesyncV2, DetectedUnderGround, DetectedUnderGroundV2, DetectedFreeFall, Anti_AimViewer = CFrame.new(), nil, nil, false, false, false, false, false, true
 local Script = {Functions = {}, Friends = {}, Drawing = {}, EspPlayers = {}}
@@ -165,15 +166,15 @@ if ShirouSettings.Enabled_Notification then
 		Duration = 5
 	})
 end
-	
-if ShirouSettings.AntiMacroFling then
+
+if getgenv().ShirouSettings.AntiMacroFling then
 local antimacrofling = game:GetService("RunService").Heartbeat:Connect(function()
 game:GetService("RunService").RenderStepped:Wait()
 game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
 end)
 end
 
-if not ShirouSettings.AntiMacroFling then
+if not getgenv().ShirouSettings.AntiMacroFling then
 antimacrofling:Disconnect()
 end
 
