@@ -133,7 +133,6 @@ Script.Functions.UpdateFOV = function()
 	Script.Drawing.SilentCircle.Transparency = ShirouSettings.Transparency
 	Script.Drawing.SilentCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
 	Script.Drawing.SilentCircle.Radius = ShirouSettings.Fov_Size * 3
-	end
 end
 
     --// Check if lock is loaded
