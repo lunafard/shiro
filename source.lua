@@ -68,36 +68,6 @@ getgenv().ShirouSettings = {
 
     NearestHitPart = ShirouSettings.NearestHitPart,
 
-------- Range Fov  -------
-    -- // Do not edit the gun names.
-
-    EnableRangeFOV = false,
-    DoubleBarrel = { -- // DB
-	Far = 9,
-	Med = 9,
-	Close = 9
-},
-	Revolver = { -- // Rev
-	Far = 9,
-	Med = 9,
-	Close = 9
-},
-	SMG = { -- // Smg
-	Far = 9,
-	Med = 9,
-	Close = 9
-},
-	TacticalShotgun = { -- // TacticalShotgun
-	Far = 9,
-	Med = 9,
-	Close = 9
-},
-	Rifle = { -- // Rifle
-	Far = 9,
-	Med = 9,
-	Close = 9
-},
-
 ------- AIM ASSIST / CAMLOCK -------
 
 	AimAssistEnabled = ShirouSettings.AimAssistEnabled,
@@ -163,24 +133,6 @@ Script.Functions.UpdateFOV = function()
 	Script.Drawing.SilentCircle.Transparency = ShirouSettings.Transparency
 	Script.Drawing.SilentCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
 	Script.Drawing.SilentCircle.Radius = ShirouSettings.Fov_Size * 3
-
-	if ShirouSettings.EnableRangeFOV then
-		local CurrentGun = Script.Functions.GetCurrentWeaponName()
-		if ShirouSettings.EnableRangeFOV then
-			local WeaponSettingsV2 = ShirouSettings[CurrentGun]
-			if WeaponSettingsV2 ~= nil then
-				if Script.Functions.Alive(SilentTarget) and Script.Functions.Alive(Client) then
-					local Magnitude = (SilentTarget.Character.HumanoidRootPart.Position - Client.Character.HumanoidRootPart.Position).Magnitude
-					if Magnitude < ShirouSettings.Close_Activation then
-						ShirouSettings.Radius = WeaponSettingsV2.Close
-					elseif Magnitude < ShirouSettings.Medium_Activation then
-						ShirouSettings.Radius = WeaponSettingsV2.Med
-					elseif Magnitude < ShirouSettings.Far_Activation then
-						ShirouSettings.Radius = WeaponSettingsV2.Far
-					end
-				end
-			end
-		end
 	end
 end
 
