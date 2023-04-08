@@ -71,7 +71,7 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 	------- Range Fov  -------
 		-- // Do not edit the gun names.
 	
-		EnableRangeFOV = ShirouSettings.EnableRangeFOV,
+		EnableRangeFOV = false,
 		DoubleBarrel = { -- // DB
 		Far = ShirouSettings.DoubleBarrel.Far,
 		Med = ShirouSettings.DoubleBarrel.Med,
