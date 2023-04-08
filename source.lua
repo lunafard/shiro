@@ -1,13 +1,15 @@
 if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 
 repeat wait() until game:IsLoaded()
+	
+local ShirouSettings = getgenv().ShirouSettings
 
-getgenv().ShirouSettings = {
+ShirouSettings = {
     AntiGroundShots = true, -- remove
     AntiGroundValue = 0.5, -- remove
     WhenAntiGroundActivate = -20, -- remove
     WallCheck = true, -- remove
-    K_O_Check = getgenv().ShirouSettings.K_O_Check,
+    K_O_Check = ShirouSettings.K_O_Check,
     Humanize = false, -- remove
     HumanizeValue = 2, -- remove
     TriggerBot = false, -- remove
@@ -21,10 +23,10 @@ getgenv().ShirouSettings = {
     Close_Activation = 16, -- remove
     Transparency = 1, -- remove
     Color = Color3.fromRGB(0,0,0), -- remove
-    HitParts = getgenv().ShirouSettings.HitParts, -- remove
+    HitParts = ShirouSettings.HitParts, -- remove
     UseAirPart = false, -- remove
 	AirPart = "LowerTorso", -- remove
-    KnockedCheck = getgenv().ShirouSettings.KnockedCheck, -- remove
+    KnockedCheck = ShirouSettings.KnockedCheck, -- remove
     UseCircleRadius = true, -- remove
     HoldMode = false, -- remove
     Part = getgenv().ShirouSettings.Part, -- remove
@@ -40,8 +42,8 @@ getgenv().ShirouSettings = {
 	UnderGroundKey = "X", -- remove
 	VisibleCheck = true, -- remove
 	TeamCheck = false, -- remove
-	UseLay = getgenv().ShirouSettings.UseLay, -- remove
-	LayKeybind = getgenv().ShirouSettings.LayKeybind, -- remove
+	UseLay = ShirouSettings.UseLay, -- remove
+	LayKeybind = ShirouSettings.LayKeybind, -- remove
 	ESPHoldMode = false, -- remove
 	Name = {Enabled = true, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
 	Box = {Enabled = true, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
@@ -99,7 +101,6 @@ mousemoverel = mousemoverel
 
 -- // Variables (Too Lazy To Make It To One Local)
 local DoubleBarrel = "Double-Barrel SG"
-local Shirou = getgenv().Shirou
 local OldSilentAimPart = ShirouSettings.HitParts
 local ClosestPointCF, SilentTarget, AimTarget, DetectedDesync, DetectedDesyncV2, DetectedUnderGround, DetectedUnderGroundV2, DetectedFreeFall, Anti_AimViewer = CFrame.new(), nil, nil, false, false, false, false, false, true
 local Script = {Functions = {}, Friends = {}, Drawing = {}, EspPlayers = {}}
