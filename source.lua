@@ -125,7 +125,7 @@ Script.Functions.UpdateFOV = function()
 	Script.Drawing.AimAssistCircle.Visible = getgenv().ShirouSettings.AS_Show_Fov
 	Script.Drawing.AimAssistCircle.Filled = getgenv().ShirouSettings.ASFov_Filled
 	Script.Drawing.AimAssistCircle.Color = getgenv().ShirouSettings.ASColor
-	Script.Drawing.AimAssistCircle.Transparency = ShirouSettings.ASTransparency
+	Script.Drawing.AimAssistCircle.Transparency = getgenv().ShirouSettings.ASTransparency
 	Script.Drawing.AimAssistCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
 	Script.Drawing.AimAssistCircle.Radius = getgenv().ShirouSettings.Radius * 3
 
