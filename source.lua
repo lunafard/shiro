@@ -122,19 +122,19 @@ Script.Functions.UpdateFOV = function()
 		return Script.Drawing.SilentCircle and Script.Drawing.AimAssistCircle
 	end
 
-	Script.Drawing.AimAssistCircle.Visible = getgenv().ShirouSettings.AS_Show_Fov
-	Script.Drawing.AimAssistCircle.Filled = getgenv().ShirouSettings.ASFov_Filled
-	Script.Drawing.AimAssistCircle.Color = getgenv().ShirouSettings.ASColor
-	Script.Drawing.AimAssistCircle.Transparency = getgenv().ShirouSettings.ASTransparency
+	Script.Drawing.AimAssistCircle.Visible = ShirouSettings.AS_Show_Fov
+	Script.Drawing.AimAssistCircle.Filled = ShirouSettings.ASFov_Filled
+	Script.Drawing.AimAssistCircle.Color = ShirouSettings.ASColor
+	Script.Drawing.AimAssistCircle.Transparency = ShirouSettings.ASTransparency
 	Script.Drawing.AimAssistCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
-	Script.Drawing.AimAssistCircle.Radius = getgenv().ShirouSettings.Radius * 3
+	Script.Drawing.AimAssistCircle.Radius = ShirouSettings.Radius * 3
 
-	Script.Drawing.SilentCircle.Visible = getgenv().ShirouSettings.Show_Fov
-	Script.Drawing.SilentCircle.Color = getgenv().ShirouSettings.Color
-	Script.Drawing.SilentCircle.Filled = getgenv().ShirouSettings.Fov_Filled
-	Script.Drawing.SilentCircle.Transparency = getgenv().ShirouSettings.Transparency
+	Script.Drawing.SilentCircle.Visible = ShirouSettings.Show_Fov
+	Script.Drawing.SilentCircle.Color = ShirouSettings.Color
+	Script.Drawing.SilentCircle.Filled = ShirouSettings.Fov_Filled
+	Script.Drawing.SilentCircle.Transparency = ShirouSettings.Transparency
 	Script.Drawing.SilentCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
-	Script.Drawing.SilentCircle.Radius = getgenv().ShirouSettings.Fov_Size * 3
+	Script.Drawing.SilentCircle.Radius = ShirouSettings.Fov_Size * 3
 end
 
     --// Check if lock is loaded
