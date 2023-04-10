@@ -55,6 +55,8 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 		Fov_Filled = getgenv().ShirouSettings.Fov_Filled,
 		Fov_Size = getgenv().ShirouSettings.Fov_Size,
 		Crew_Whitelist = getgenv().ShirouSettings.Crew_Whitelist,
+		UseStretchedResolution = getgenv().ShirouSettings.UseStretchedResolution
+		Resolution = getgenv().ShirouSettings.Resolution -- 1 for normal 0.35 is good 0.65 good
 		Friends_Whitelist = getgenv().ShirouSettings.Friends_Whitelist,
 		Enabled_Notification = getgenv().ShirouSettings.Enabled_Notification,
 		ESP = getgenv().ShirouSettings.ESP,
@@ -134,6 +136,19 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 		Script.Drawing.SilentCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
 		Script.Drawing.SilentCircle.Radius = getgenv().ShirouSettings.Fov_Size * 3
 	end
+	
+	if not getgenv().ShirouSettings.UseStretchedResolution then
+	getgenv().ShirouSettings.Resolution = 1
+	end
+	
+	if getgenv().ShirouSettings.UseStretchedResolution then
+	if getgenv().ShirousStretchRes == nil then
+    	game:GetService("RunService").RenderStepped:Connect(function()
+        workspace.CurrentCamera.CFrame = workspace.CurrentCamera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, getgenv().ShirouSettings.Resolution, 0, 0, 0, 1)
+        end)
+	end
+	end
+	getgenv().ShirousStretchRes = "not nil"
 	
 		--// Check if lock is loaded
 		if getgenv().LoadShirou == true then
