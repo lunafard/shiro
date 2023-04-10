@@ -55,8 +55,8 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 		Fov_Filled = getgenv().ShirouSettings.Fov_Filled,
 		Fov_Size = getgenv().ShirouSettings.Fov_Size,
 		Crew_Whitelist = getgenv().ShirouSettings.Crew_Whitelist,
-		UseStretchedResolution = getgenv().ShirouSettings.UseStretchedResolution
-		Resolution = getgenv().ShirouSettings.Resolution -- 1 for normal 0.35 is good 0.65 good
+		UseStretchedResolution = getgenv().ShirouSettings.UseStretchedResolution,
+		Resolution = getgenv().ShirouSettings.Resolution, -- 1 for normal 0.35 is good 0.65 good
 		Friends_Whitelist = getgenv().ShirouSettings.Friends_Whitelist,
 		Enabled_Notification = getgenv().ShirouSettings.Enabled_Notification,
 		ESP = getgenv().ShirouSettings.ESP,
@@ -137,7 +137,7 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 		Script.Drawing.SilentCircle.Radius = getgenv().ShirouSettings.Fov_Size * 3
 	end
 	
-	if not getgenv().ShirouSettings.UseStretchedResolution then
+		if not getgenv().ShirouSettings.UseStretchedResolution then
 	getgenv().ShirouSettings.Resolution = 1
 	end
 	
@@ -147,7 +147,7 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
         end)
 	end
 	getgenv().ShirousStretchRes = "not nil"
-	
+
 		--// Check if lock is loaded
 		if getgenv().LoadShirou == true then
 			if getgenv().ShirouSettings.Enabled_Notification then
