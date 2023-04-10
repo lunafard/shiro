@@ -141,8 +141,7 @@ if script_key == "ayvWJBsuKdJNsCntrPRe_SHIROU_rsaUQgsAVdKBTMbrZLEY" then
 	getgenv().ShirouSettings.Resolution = 1
 	end
 	
-	if getgenv().ShirouSettings.UseStretchedResolution then
-	if getgenv().ShirousStretchRes == nil then
+	if getgenv().ShirouSettings.UseStretchedResolution and getgenv().ShirousStretchRes == nil then
     	game:GetService("RunService").RenderStepped:Connect(function()
         workspace.CurrentCamera.CFrame = workspace.CurrentCamera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, getgenv().ShirouSettings.Resolution, 0, 0, 0, 1)
         end)
