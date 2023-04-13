@@ -1,14 +1,13 @@
-
 if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 
 	repeat wait() until game:IsLoaded()
 	
-	getgenv().DesmiseSettings = {
+	getgenv().DemiseSettings = {
 		AntiGroundShots = true, -- remove
 		AntiGroundValue = 0.5, -- remove
 		WhenAntiGroundActivate = -20, -- remove
 		WallCheck = true, -- remove
-		K_O_Check = getgenv().DesmiseSettings.K_O_Check,
+		K_O_Check = getgenv().DemiseSettings.K_O_Check,
 		Humanize = false, -- remove
 		HumanizeValue = 2, -- remove
 		TriggerBot = false, -- remove
@@ -22,13 +21,13 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		Close_Activation = 16, -- remove
 		Transparency = 1, -- remove
 		Color = Color3.fromRGB(0,0,0), -- remove
-		HitParts = getgenv().DesmiseSettings.HitParts, -- remove
+		HitParts = getgenv().DemiseSettings.HitParts, -- remove
 		UseAirPart = false, -- remove
 		AirPart = "LowerTorso", -- remove
-		KnockedCheck = getgenv().DesmiseSettings.KnockedCheck, -- remove
+		KnockedCheck = getgenv().DemiseSettings.KnockedCheck, -- remove
 		UseCircleRadius = true, -- remove
 		HoldMode = false, -- remove
-		Part = getgenv().DesmiseSettings.Part, -- remove
+		Part = getgenv().DemiseSettings.Part, -- remove
 		ASTransparency = 0.5, -- remove
 		ASColor = Color3.fromRGB(0,0,0), -- remove
 		DetectDesync = true, -- remove
@@ -41,8 +40,8 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		UnderGroundKey = "X", -- remove
 		VisibleCheck = true, -- remove
 		TeamCheck = false, -- remove
-		UseLay = getgenv().DesmiseSettings.UseLay, -- remove
-		LayKeybind = getgenv().DesmiseSettings.LayKeybind, -- remove
+		UseLay = getgenv().DemiseSettings.UseLay, -- remove
+		LayKeybind = getgenv().DemiseSettings.LayKeybind, -- remove
 		ESPHoldMode = false, -- remove
 		Name = {Enabled = true, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
 		Box = {Enabled = true, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
@@ -50,52 +49,52 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		HealthText = {Enabled = true, OutLine = true, Color = Color3.fromRGB(161, 196, 140)}, -- remove
 		Distance = {Enabled = false, OutLine = true, Color = Color3.fromRGB(255, 255, 255)}, -- remove
 	
-		Enabled = getgenv().DesmiseSettings.Enabled,
-		KeyBind = getgenv().DesmiseSettings.KeyBind, -- // toggle on and off silent
-		Show_Fov = getgenv().DesmiseSettings.Show_Fov,
-		Fov_Filled = getgenv().DesmiseSettings.Fov_Filled,
-		Fov_Size = getgenv().DesmiseSettings.Fov_Size,
-		Crew_Whitelist = getgenv().DesmiseSettings.Crew_Whitelist,
-		UseStretchedResolution = getgenv().DesmiseSettings.UseStretchedResolution,
-		Resolution_X = getgenv().DesmiseSettings.Resolution_X, -- 1 for normal 0.35 is good 0.65 good
-		Resolution_Y = getgenv().DesmiseSettings.Resolution_Y,
-		Friends_Whitelist = getgenv().DesmiseSettings.Friends_Whitelist,
-		Enabled_Notification = getgenv().DesmiseSettings.Enabled_Notification,
-		ESP = getgenv().DesmiseSettings.ESP,
-		UseEspKeybind = getgenv().DesmiseSettings.UseEspKeybind, -- // Keybinds ESP so you can turn it on and off with the press of EspKey.
-		EspKey = getgenv().DesmiseSettings.EspKey,
-		Anti_AimViewer = getgenv().DesmiseSettings.Anti_AimViewer, -- // Spoofs mousepos to bypass silent aim being aimviewed.
-		Auto_prediction = getgenv().DesmiseSettings.Auto_prediction,
-		HitChance = getgenv().DesmiseSettings.HitChance,
+		Enabled = getgenv().DemiseSettings.Enabled,
+		KeyBind = getgenv().DemiseSettings.KeyBind, -- // toggle on and off silent
+		Show_Fov = getgenv().DemiseSettings.Show_Fov,
+		Fov_Filled = getgenv().DemiseSettings.Fov_Filled,
+		Fov_Size = getgenv().DemiseSettings.Fov_Size,
+		Crew_Whitelist = getgenv().DemiseSettings.Crew_Whitelist,
+		UseStretchedResolution = getgenv().DemiseSettings.UseStretchedResolution,
+		Resolution_X = getgenv().DemiseSettings.Resolution_X, -- 1 for normal 0.35 is good 0.65 good
+		Resolution_Y = getgenv().DemiseSettings.Resolution_Y,
+		Friends_Whitelist = getgenv().DemiseSettings.Friends_Whitelist,
+		Enabled_Notification = getgenv().DemiseSettings.Enabled_Notification,
+		ESP = getgenv().DemiseSettings.ESP,
+		UseEspKeybind = getgenv().DemiseSettings.UseEspKeybind, -- // Keybinds ESP so you can turn it on and off with the press of EspKey.
+		EspKey = getgenv().DemiseSettings.EspKey,
+		Anti_AimViewer = getgenv().DemiseSettings.Anti_AimViewer, -- // Spoofs mousepos to bypass silent aim being aimviewed.
+		Auto_prediction = getgenv().DemiseSettings.Auto_prediction,
+		HitChance = getgenv().DemiseSettings.HitChance,
 	
-		Prediction = getgenv().DesmiseSettings.Prediction, -- // Main Prediction
+		Prediction = getgenv().DemiseSettings.Prediction, -- // Main Prediction
 	
-		NearestHitPart = getgenv().DesmiseSettings.NearestHitPart,
+		NearestHitPart = getgenv().DemiseSettings.NearestHitPart,
 	
 	------- AIM ASSIST / CAMLOCK -------
 	
-		AimAssistEnabled = getgenv().DesmiseSettings.AimAssistEnabled,
-		ASKeyBind = getgenv().DesmiseSettings.ASKeyBind,
+		AimAssistEnabled = getgenv().DemiseSettings.AimAssistEnabled,
+		ASKeyBind = getgenv().DemiseSettings.ASKeyBind,
 		AS_Show_Fov = false,
 		ASFov_Filled = false,
-		Radius = getgenv().DesmiseSettings.Radius,
-		UseShake = getgenv().DesmiseSettings.UseShake,
-		ShakeValue = getgenv().DesmiseSettings.ShakeValue,
-		EnablePrediction = getgenv().DesmiseSettings.EnablePrediction,
-		EnableSmoothness = getgenv().DesmiseSettings.EnableSmoothness,
+		Radius = getgenv().DemiseSettings.Radius,
+		UseShake = getgenv().DemiseSettings.UseShake,
+		ShakeValue = getgenv().DemiseSettings.ShakeValue,
+		EnablePrediction = getgenv().DemiseSettings.EnablePrediction,
+		EnableSmoothness = getgenv().DemiseSettings.EnableSmoothness,
 		ASWallCheck = true,
 		DisableOutSideCircle = false,
-		Smoothness_X = getgenv().DesmiseSettings.Smoothness_X,
-		Smoothness_Y = getgenv().DesmiseSettings.Smoothness_Y,
-		AntiMacroFling = getgenv().DesmiseSettings.AntiMacroFling,
+		Smoothness_X = getgenv().DemiseSettings.Smoothness_X,
+		Smoothness_Y = getgenv().DemiseSettings.Smoothness_Y,
+		AntiMacroFling = getgenv().DemiseSettings.AntiMacroFling,
 	
-		ASPrediction = getgenv().DesmiseSettings.ASPrediction,
+		ASPrediction = getgenv().DemiseSettings.ASPrediction,
 	
-		ClosestMousePoint = getgenv().DesmiseSettings.ClosestMousePoint,
+		ClosestMousePoint = getgenv().DemiseSettings.ClosestMousePoint,
 
-		EnableMemory = trgetgenv().DesmiseSettings.EnableMemory,
-		MemSpoofMost = getgenv().DesmiseSettings.MemSpoofMost,
-		MemSpoofLeast = getgenv().DesmiseSettings.MemSpoofLeast
+		EnableMemory = getgenv().DemiseSettings.EnableMemory,
+		MemSpoofMost = getgenv().DemiseSettings.MemSpoofMost,
+		MemSpoofLeast = getgenv().DemiseSettings.MemSpoofLeast
 	}
 	
 	getgenv = getgenv
@@ -108,7 +107,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	
 	-- // Variables (Too Lazy To Make It To One Local)
 	local DoubleBarrel = "Double-Barrel SG"
-	local OldSilentAimPart = getgenv().DesmiseSettings.HitParts
+	local OldSilentAimPart = getgenv().DemiseSettings.HitParts
 	local ClosestPointCF, SilentTarget, AimTarget, DetectedDesync, DetectedDesyncV2, DetectedUnderGround, DetectedUnderGroundV2, DetectedFreeFall, Anti_AimViewer = CFrame.new(), nil, nil, false, false, false, false, false, true
 	local Script = {Functions = {}, Friends = {}, Drawing = {}, EspPlayers = {}}
 	
@@ -129,40 +128,40 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			return Script.Drawing.SilentCircle and Script.Drawing.AimAssistCircle
 		end
 	
-		Script.Drawing.AimAssistCircle.Visible = getgenv().DesmiseSettings.AS_Show_Fov
-		Script.Drawing.AimAssistCircle.Filled = getgenv().DesmiseSettings.ASFov_Filled
-		Script.Drawing.AimAssistCircle.Color = getgenv().DesmiseSettings.ASColor
-		Script.Drawing.AimAssistCircle.Transparency = getgenv().DesmiseSettings.ASTransparency
+		Script.Drawing.AimAssistCircle.Visible = getgenv().DemiseSettings.AS_Show_Fov
+		Script.Drawing.AimAssistCircle.Filled = getgenv().DemiseSettings.ASFov_Filled
+		Script.Drawing.AimAssistCircle.Color = getgenv().DemiseSettings.ASColor
+		Script.Drawing.AimAssistCircle.Transparency = getgenv().DemiseSettings.ASTransparency
 		Script.Drawing.AimAssistCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
-		Script.Drawing.AimAssistCircle.Radius = getgenv().DesmiseSettings.Radius * 3
+		Script.Drawing.AimAssistCircle.Radius = getgenv().DemiseSettings.Radius * 3
 	
-		Script.Drawing.SilentCircle.Visible = getgenv().DesmiseSettings.Show_Fov
-		Script.Drawing.SilentCircle.Color = getgenv().DesmiseSettings.Color
-		Script.Drawing.SilentCircle.Filled = getgenv().DesmiseSettings.Fov_Filled
-		Script.Drawing.SilentCircle.Transparency = getgenv().DesmiseSettings.Transparency
+		Script.Drawing.SilentCircle.Visible = getgenv().DemiseSettings.Show_Fov
+		Script.Drawing.SilentCircle.Color = getgenv().DemiseSettings.Color
+		Script.Drawing.SilentCircle.Filled = getgenv().DemiseSettings.Fov_Filled
+		Script.Drawing.SilentCircle.Transparency = getgenv().DemiseSettings.Transparency
 		Script.Drawing.SilentCircle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiS:GetGuiInset().Y)
-		Script.Drawing.SilentCircle.Radius = getgenv().DesmiseSettings.Fov_Size * 3
+		Script.Drawing.SilentCircle.Radius = getgenv().DemiseSettings.Fov_Size * 3
 	end
 	
-	if not getgenv().DesmiseSettings.UseStretchedResolution then
-	getgenv().DesmiseSettings.Resolution = 1
+	if not getgenv().DemiseSettings.UseStretchedResolution then
+	getgenv().DemiseSettings.Resolution = 1
 	end
 
-	if not getgenv().DesmiseSettings.EnableSmoothness then
+	if not getgenv().DemiseSettings.EnableSmoothness then
 	getgenv().Demisesettings.Smoothness_X = 1
 	getgenv().Demisesettings.Smoothness_Y = 1
 	end
 	
-	if getgenv().DesmiseSettings.UseStretchedResolution and getgenv().ShirousStretchRes == nil then
+	if getgenv().DemiseSettings.UseStretchedResolution and getgenv().ShirousStretchRes == nil then
     	game:GetService("RunService").RenderStepped:Connect(function()
-        workspace.CurrentCamera.CFrame = workspace.CurrentCamera.CFrame * CFrame.new(0, 0, 0, getgenv().DesmiseSettings.Resolution_Y, 0, 0, 0, getgenv().DesmiseSettings.Resolution_X, 0, 0, 0, 1)
+        workspace.CurrentCamera.CFrame = workspace.CurrentCamera.CFrame * CFrame.new(0, 0, 0, getgenv().DemiseSettings.Resolution_X, 0, 0, 0, getgenv().DemiseSettings.Resolution_Y, 0, 0, 0, 1)
         end)
 	end
 	getgenv().ShirousStretchRes = "not nil"
 
 		--// Check if lock is loaded
 		if getgenv().LoadShirou == true then
-			if getgenv().DesmiseSettings.Enabled_Notification then
+			if getgenv().DemiseSettings.Enabled_Notification then
 			game:GetService("StarterGui"):SetCore("SendNotification", {
 			Title = "Shirou";
 			Text = "Shirous lock is already loaded.";
@@ -182,7 +181,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			
 			getgenv().LoadShirou = true
 			
-	if getgenv().DesmiseSettings.Enabled_Notification then
+	if getgenv().DemiseSettings.Enabled_Notification then
 			game:GetService("StarterGui"):SetCore("SendNotification", {
 			Title = "Shirous lock loaded";
 			Text = "食肉#0001";
@@ -191,14 +190,14 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		})
 	end
 	
-	if getgenv().DesmiseSettings.AntiMacroFling then
+	if getgenv().DemiseSettings.AntiMacroFling then
 	local antimacrofling = game:GetService("RunService").Heartbeat:Connect(function()
 	game:GetService("RunService").RenderStepped:Wait()
 	game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
 	end)
 	end
 	
-	if not getgenv().DesmiseSettings.AntiMacroFling then
+	if not getgenv().DemiseSettings.AntiMacroFling then
 	antimacrofling:Disconnect()
 	end
 
@@ -226,9 +225,9 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	
 	-- // KeyDown Check
 	Mouse.KeyDown:Connect(function(Key)
-		local Keybind = getgenv().DesmiseSettings.ASKeyBind:lower()
+		local Keybind = getgenv().DemiseSettings.ASKeyBind:lower()
 		if Key == Keybind then
-			if getgenv().DesmiseSettings.Enabled then
+			if getgenv().DemiseSettings.Enabled then
 				IsTargetting = not IsTargetting
 				if IsTargetting then
 					Script.Functions.GetClosestPlayer2()
@@ -240,75 +239,75 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				end
 			end
 		end
-		local Keybind2 = getgenv().DesmiseSettings.KeyBind:lower()
-		if Key == Keybind2 and getgenv().DesmiseSettings.UseKeybind then
-			getgenv().DesmiseSettings.Enabled = not getgenv().DesmiseSettings.Enabled
-			if getgenv().DesmiseSettings.Enabled_Notification then
+		local Keybind2 = getgenv().DemiseSettings.KeyBind:lower()
+		if Key == Keybind2 and getgenv().DemiseSettings.UseKeybind then
+			getgenv().DemiseSettings.Enabled = not getgenv().DemiseSettings.Enabled
+			if getgenv().DemiseSettings.Enabled_Notification then
 				game.StarterGui:SetCore("SendNotification",{
 					Title = "Shirous Lock",
-					Text = "" .. tostring(getgenv().DesmiseSettings.Enabled),
+					Text = "" .. tostring(getgenv().DemiseSettings.Enabled),
 					Icon = "",
 					Duration = 1
 				})
 			end
 		end
-		local Keybind3 = getgenv().DesmiseSettings.UnderGroundKey:lower()
-		if Key == Keybind3 and getgenv().DesmiseSettings.UseUnderGroundKeybind then
-			getgenv().DesmiseSettings.DetectUnderGround = not getgenv().DesmiseSettings.DetectUnderGround
-			if getgenv().DesmiseSettings.Enabled_Notification then
+		local Keybind3 = getgenv().DemiseSettings.UnderGroundKey:lower()
+		if Key == Keybind3 and getgenv().DemiseSettings.UseUnderGroundKeybind then
+			getgenv().DemiseSettings.DetectUnderGround = not getgenv().DemiseSettings.DetectUnderGround
+			if getgenv().DemiseSettings.Enabled_Notification then
 				game.StarterGui:SetCore("SendNotification",{
 					Title = "Shirous UG Resolver",
-					Text = "" .. tostring(getgenv().DesmiseSettings.DetectUnderGround),
+					Text = "" .. tostring(getgenv().DemiseSettings.DetectUnderGround),
 					Icon = "",
 					Duration = 1
 				})
 			end
 		end
-		local Keybind4 = getgenv().DesmiseSettings.DetectDesyncKey:lower()
-		if Key == Keybind4 and getgenv().DesmiseSettings.UseDetectDesyncKeybind then
-			getgenv().DesmiseSettings.DetectDesync = not getgenv().DesmiseSettings.DetectDesync
-			if getgenv().DesmiseSettings.Enabled_Notification then
+		local Keybind4 = getgenv().DemiseSettings.DetectDesyncKey:lower()
+		if Key == Keybind4 and getgenv().DemiseSettings.UseDetectDesyncKeybind then
+			getgenv().DemiseSettings.DetectDesync = not getgenv().DemiseSettings.DetectDesync
+			if getgenv().DemiseSettings.Enabled_Notification then
 				game.StarterGui:SetCore("SendNotification",{
 					Title = "Shirous Desync Resolver",
-					Text = "" .. tostring(getgenv().DesmiseSettings.DetectDesync),
+					Text = "" .. tostring(getgenv().DemiseSettings.DetectDesync),
 					Icon = "",
 					Duration = 1
 				})
 			end
 		end
-		local Keybind5 = getgenv().DesmiseSettings.LayKeybind:lower()
-		if Key == Keybind5 and getgenv().DesmiseSettings.UseLay then
+		local Keybind5 = getgenv().DemiseSettings.LayKeybind:lower()
+		if Key == Keybind5 and getgenv().DemiseSettings.UseLay then
 			local Args = {
 				[1] = "AnimationPack",
 				[2] = "Lay"
 			}
 			game:GetService("ReplicatedStorage"):FindFirstChild("MainEvent"):FireServer(unpack(Args))
 		end
-		local Keybind6 = getgenv().DesmiseSettings.EspKey:lower()
-		if Key == Keybind6 and getgenv().DesmiseSettings.UseEspKeybind then
-			if getgenv().DesmiseSettings.ESPHoldMode then
-				getgenv().DesmiseSettings.ESP = true
+		local Keybind6 = getgenv().DemiseSettings.EspKey:lower()
+		if Key == Keybind6 and getgenv().DemiseSettings.UseEspKeybind then
+			if getgenv().DemiseSettings.ESPHoldMode then
+				getgenv().DemiseSettings.ESP = true
 			else
-				getgenv().DesmiseSettings.ESP = not getgenv().DesmiseSettings.ESP
+				getgenv().DemiseSettings.ESP = not getgenv().DemiseSettings.ESP
 			end
 		end
 	end)
 	
 	-- // KeyUp Check
 	Mouse.KeyUp:Connect(function(Key)
-		local Keybind = getgenv().DesmiseSettings.EspKey:lower()
-		if Key == Keybind and getgenv().DesmiseSettings.UseEspKeybind and getgenv().DesmiseSettings.ESPHoldMode then
-			getgenv().DesmiseSettings.ESP = false
+		local Keybind = getgenv().DemiseSettings.EspKey:lower()
+		if Key == Keybind and getgenv().DemiseSettings.UseEspKeybind and getgenv().DemiseSettings.ESPHoldMode then
+			getgenv().DemiseSettings.ESP = false
 		end
-		local Keybind2 = getgenv().DesmiseSettings.ASKeyBind:lower()
-		if Key == Keybind2 and getgenv().DesmiseSettings.AimAssistEnabled and getgenv().DesmiseSettings.HoldMode then
+		local Keybind2 = getgenv().DemiseSettings.ASKeyBind:lower()
+		if Key == Keybind2 and getgenv().DemiseSettings.AimAssistEnabled and getgenv().DemiseSettings.HoldMode then
 			IsTargetting = false
 			AimTarget = nil
 		end
 	end)
 	
 	-- // Disabled If AntiAimViewer Is On
-	if getgenv().DesmiseSettings.Anti_AimViewer then
+	if getgenv().DemiseSettings.Anti_AimViewer then
 		Anti_AimViewer = false
 	else
 		Anti_AimViewer = true
@@ -316,7 +315,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	
 	-- // Blocks Mouse Triggering
 	game:GetService("ContextActionService"):BindActionAtPriority("LeftMouseBlock", function()
-		if Anti_AimViewer == false and getgenv().DesmiseSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
+		if Anti_AimViewer == false and getgenv().DemiseSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
 			return Enum.ContextActionResult.Sink
 		else
 			return Enum.ContextActionResult.Pass
@@ -325,10 +324,10 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	
 	-- // Delaying The Mouse Trigger
 	Uis.InputBegan:connect(function(input)
-		if input.UserInputType == Enum.UserInputType[getgenv().DesmiseSettings.TriggerBotKey] and getgenv().DesmiseSettings.UseTriggerBotKeybind then
-			getgenv().DesmiseSettings.TriggerBot = true
+		if input.UserInputType == Enum.UserInputType[getgenv().DemiseSettings.TriggerBotKey] and getgenv().DemiseSettings.UseTriggerBotKeybind then
+			getgenv().DemiseSettings.TriggerBot = true
 		end
-		if input.UserInputType == Enum.UserInputType.MouseButton1 and getgenv().DesmiseSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
+		if input.UserInputType == Enum.UserInputType.MouseButton1 and getgenv().DemiseSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
 			if Anti_AimViewer == false then
 				Anti_AimViewer = true
 				mouse1click()
@@ -344,10 +343,10 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	
 	-- // Helps With Automatics
 	Uis.InputEnded:connect(function(input)
-		if input.UserInputType == Enum.UserInputType[getgenv().DesmiseSettings.TriggerBotKey] and getgenv().DesmiseSettings.UseTriggerBotKeybind then
-			getgenv().DesmiseSettings.TriggerBot = true
+		if input.UserInputType == Enum.UserInputType[getgenv().DemiseSettings.TriggerBotKey] and getgenv().DemiseSettings.UseTriggerBotKeybind then
+			getgenv().DemiseSettings.TriggerBot = true
 		end
-		if input.UserInputType == Enum.UserInputType.MouseButton1 and getgenv().DesmiseSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
+		if input.UserInputType == Enum.UserInputType.MouseButton1 and getgenv().DemiseSettings.Anti_AimViewer and Client.Character and Client.Character:FindFirstChildWhichIsA("Tool") then
 			if Anti_AimViewer == false then
 				Anti_AimViewer = true
 				mouse1click()
@@ -519,7 +518,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	Script.Functions.GetClosestPlayer = function()
 		local Target = nil
 		local Closest = math.huge
-		local HitChance = Script.Functions.CalculateChance(getgenv().DesmiseSettings.HitChance)
+		local HitChance = Script.Functions.CalculateChance(getgenv().DemiseSettings.HitChance)
 	
 		if not HitChance then
 			return nil
@@ -529,35 +528,35 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				if not Script.Functions.OnScreen(v.Character.HumanoidRootPart) then 
 					continue 
 				end
-				if getgenv().DesmiseSettings.WallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
+				if getgenv().DemiseSettings.WallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
 					continue 
 				end
-				if getgenv().DesmiseSettings.K_O_Check and v.Character:FindFirstChild("BodyEffects") then
+				if getgenv().DemiseSettings.K_O_Check and v.Character:FindFirstChild("BodyEffects") then
 					local KoCheck = v.Character.BodyEffects:FindFirstChild("K.O").Value
 					local Grabbed = v.Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
 					if KoCheck or Grabbed then
 						continue
 					end
 				end
-				if getgenv().DesmiseSettings.K_O_Check and v.Character:FindFirstChild("Humanoid") then
+				if getgenv().DemiseSettings.K_O_Check and v.Character:FindFirstChild("Humanoid") then
 					if v.Character.Humanoid.health < 4 then
 						continue
 					end
 				end
-				if getgenv().DesmiseSettings.VisibleCheck and v.Character:FindFirstChild("Head") then
+				if getgenv().DemiseSettings.VisibleCheck and v.Character:FindFirstChild("Head") then
 					if v.Character.Head.Transparency > 0.5 then
 						continue
 					end
 				end
-				if getgenv().DesmiseSettings.Crew_Whitelist and Script.Functions.FindCrew(v) and v.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
+				if getgenv().DemiseSettings.Crew_Whitelist and Script.Functions.FindCrew(v) and v.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
 					continue
 				end
-				if getgenv().DesmiseSettings.TeamCheck then
+				if getgenv().DemiseSettings.TeamCheck then
 					if v.Team ~= Client.Team then
 						continue
 					end
 				end
-				if getgenv().DesmiseSettings.Friends_Whitelist then
+				if getgenv().DemiseSettings.Friends_Whitelist then
 					if not table.find(Script.Friends, v.UserId) then
 						continue
 					end
@@ -585,13 +584,13 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				if not Script.Functions.OnScreen(v.Character.HumanoidRootPart) then 
 					continue 
 				end
-				if getgenv().DesmiseSettings.ASWallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
+				if getgenv().DemiseSettings.ASWallCheck and not Script.Functions.RayCastCheck(v.Character.HumanoidRootPart, v.Character) then 
 					continue 
 				end
 				local Distance = Script.Functions.GetMagnitudeFromMouse(v.Character.HumanoidRootPart)
 	
 				if Distance < Closest then
-					if (getgenv().DesmiseSettings.UseCircleRadius and Script.Drawing.AimAssistCircle.Radius + 10 < Distance) then continue end
+					if (getgenv().DemiseSettings.UseCircleRadius and Script.Drawing.AimAssistCircle.Radius + 10 < Distance) then continue end
 					Closest = Distance
 					Target = v
 				end
@@ -599,21 +598,21 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		end
 	
 		if Script.Functions.Alive(Target) then
-			if getgenv().DesmiseSettings.VisibleCheck then
+			if getgenv().DemiseSettings.VisibleCheck then
 				if Target.Character.Head.Transparency > 0.5 then
 					return nil
 				end
 			end
-			if getgenv().DesmiseSettings.Crew_Whitelist and Script.Functions.FindCrew(Target) and Target.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
+			if getgenv().DemiseSettings.Crew_Whitelist and Script.Functions.FindCrew(Target) and Target.DataFolder.Information:FindFirstChild("Crew").Value == Client.DataFolder.Information:FindFirstChild("Crew").Value then
 				return nil
 			end
 		end
-		if getgenv().DesmiseSettings.TeamCheck and Target then
+		if getgenv().DemiseSettings.TeamCheck and Target then
 			if Target.Team == Client.Team then
 				return nil
 			end
 		end
-		if getgenv().DesmiseSettings.Friends_Whitelist then
+		if getgenv().DemiseSettings.Friends_Whitelist then
 			if table.find(Script.Friends, Target.UserId) then
 				return nil
 			end
@@ -625,23 +624,23 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	-- // Server Side Mouse Position Changer
 	local OldIndex = nil 
 	OldIndex = hookmetamethod(game, "__index", function(self, Index)
-		if not checkcaller() and Mouse and self == Mouse and Index == "Hit" and getgenv().DesmiseSettings.Enabled and Anti_AimViewer then
-			if Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(getgenv().DesmiseSettings.HitParts) then
+		if not checkcaller() and Mouse and self == Mouse and Index == "Hit" and getgenv().DemiseSettings.Enabled and Anti_AimViewer then
+			if Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(getgenv().DemiseSettings.HitParts) then
 				local EndPoint = nil
 				local TargetCF = nil
 				local TargetVel = Players[tostring(SilentTarget)].Character.HumanoidRootPart.Velocity
 				local TargetMov = Players[tostring(SilentTarget)].Character.Humanoid.MoveDirection
 	
-				if getgenv().DesmiseSettings.ClosestPoint then
+				if getgenv().DemiseSettings.ClosestPoint then
 					TargetCF = ClosestPointCF
 				else
-					TargetCF = Players[tostring(SilentTarget)].Character[getgenv().DesmiseSettings.HitParts].CFrame
+					TargetCF = Players[tostring(SilentTarget)].Character[getgenv().DemiseSettings.HitParts].CFrame
 				end
 	
-				if getgenv().DesmiseSettings.DetectDesync then
+				if getgenv().DemiseSettings.DetectDesync then
 					local Magnitude = TargetVel.magnitude
 					local Magnitude2 = TargetMov.magnitude
-					if Magnitude > getgenv().DesmiseSettings.DesyncDetection then
+					if Magnitude > getgenv().DemiseSettings.DesyncDetection then
 						DetectedDesync = true
 					else
 						DetectedDesync = false
@@ -649,15 +648,15 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				else
 					DetectedDesync = false
 				end
-				if getgenv().DesmiseSettings.AntiGroundShots then
-					if TargetVel.Y < getgenv().DesmiseSettings.WhenAntiGroundActivate then
+				if getgenv().DemiseSettings.AntiGroundShots then
+					if TargetVel.Y < getgenv().DemiseSettings.WhenAntiGroundActivate then
 						DetectedFreeFall = true
 					else
 						DetectedFreeFall = false
 					end
 				end
-				if getgenv().DesmiseSettings.DetectUnderGround then 
-					if TargetVel.Y < getgenv().DesmiseSettings.UnderGroundDetection then            
+				if getgenv().DemiseSettings.DetectUnderGround then 
+					if TargetVel.Y < getgenv().DemiseSettings.UnderGroundDetection then            
 						DetectedUnderGround = true
 					else
 						DetectedUnderGround = false
@@ -669,18 +668,18 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				if TargetCF ~= nil then
 					if DetectedDesync then
 						local MoveDirection = TargetMov * 16
-						EndPoint = TargetCF + (MoveDirection * getgenv().DesmiseSettings.Prediction)
+						EndPoint = TargetCF + (MoveDirection * getgenv().DemiseSettings.Prediction)
 					elseif DetectedUnderGround then
-						EndPoint = TargetCF + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * getgenv().DesmiseSettings.Prediction)
+						EndPoint = TargetCF + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * getgenv().DemiseSettings.Prediction)
 					elseif DetectedFreeFall then
-						EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * getgenv().DesmiseSettings.AntiGroundValue), TargetVel.Z) * getgenv().DesmiseSettings.Prediction)
-					elseif getgenv().DesmiseSettings.PredictMovement then
-						EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * 0.5), TargetVel.Z) * getgenv().DesmiseSettings.Prediction)
+						EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * getgenv().DemiseSettings.AntiGroundValue), TargetVel.Z) * getgenv().DemiseSettings.Prediction)
+					elseif getgenv().DemiseSettings.PredictMovement then
+						EndPoint = TargetCF + (Vector3.new(TargetVel.X, (TargetVel.Y * 0.5), TargetVel.Z) * getgenv().DemiseSettings.Prediction)
 					else
 						EndPoint = TargetCF
 					end
-					if getgenv().DesmiseSettings.Humanize then
-						local HumanizeValue = getgenv().DesmiseSettings.HumanizeValue 
+					if getgenv().DemiseSettings.Humanize then
+						local HumanizeValue = getgenv().DemiseSettings.HumanizeValue 
 						EndPoint = (EndPoint + Script.Functions.RandomVec(HumanizeValue, 0.01))
 					end
 				end
@@ -695,74 +694,74 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	
 	-- // Silent Aim Misc
 	Script.Functions.SilentMisc = function()
-		if getgenv().DesmiseSettings.Enabled and Script.Functions.Alive(SilentTarget) then
-			if getgenv().DesmiseSettings.UseAirPart then
+		if getgenv().DemiseSettings.Enabled and Script.Functions.Alive(SilentTarget) then
+			if getgenv().DemiseSettings.UseAirPart then
 				if SilentTarget.Character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
-					getgenv().DesmiseSettings.HitParts = getgenv().DesmiseSettings.AirPart
+					getgenv().DemiseSettings.HitParts = getgenv().DemiseSettings.AirPart
 				else
-					getgenv().DesmiseSettings.HitParts = OldSilentAimPart
+					getgenv().DemiseSettings.HitParts = OldSilentAimPart
 				end
 			end
-			if getgenv().DesmiseSettings.TriggerBot then
+			if getgenv().DemiseSettings.TriggerBot then
 				mouse1click()
 			end
 		end
-		if getgenv().DesmiseSettings.Auto_prediction then
+		if getgenv().DemiseSettings.Auto_prediction then
 			local ping = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())
 			if ping < 10 then
-				getgenv().DesmiseSettings.Prediction = 0.07
+				getgenv().DemiseSettings.Prediction = 0.07
 			elseif ping < 20 then
-				getgenv().DesmiseSettings.Prediction = 0.155
+				getgenv().DemiseSettings.Prediction = 0.155
 			elseif ping < 30 then
-				getgenv().DesmiseSettings.Prediction = 0.132
+				getgenv().DemiseSettings.Prediction = 0.132
 			elseif ping < 40 then
-				getgenv().DesmiseSettings.Prediction = 0.136
+				getgenv().DemiseSettings.Prediction = 0.136
 			elseif ping < 50 then
-				getgenv().DesmiseSettings.Prediction = 0.130
+				getgenv().DemiseSettings.Prediction = 0.130
 			elseif ping < 60 then
-				getgenv().DesmiseSettings.Prediction = 0.136
+				getgenv().DemiseSettings.Prediction = 0.136
 			elseif ping < 70 then
-				getgenv().DesmiseSettings.Prediction = 0.138
+				getgenv().DemiseSettings.Prediction = 0.138
 			elseif ping < 80 then
-				getgenv().DesmiseSettings.Prediction = 0.138
+				getgenv().DemiseSettings.Prediction = 0.138
 			elseif ping < 90 then
-				getgenv().DesmiseSettings.Prediction = 0.146
+				getgenv().DemiseSettings.Prediction = 0.146
 			elseif ping < 100 then
-				getgenv().DesmiseSettings.Prediction = 0.14322
+				getgenv().DemiseSettings.Prediction = 0.14322
 			elseif ping < 110 then
-				getgenv().DesmiseSettings.Prediction = 0.146
+				getgenv().DemiseSettings.Prediction = 0.146
 			elseif ping < 120 then
-				getgenv().DesmiseSettings.Prediction = 0.149
+				getgenv().DemiseSettings.Prediction = 0.149
 			elseif ping < 130 then
-				getgenv().DesmiseSettings.Prediction = 0.151
+				getgenv().DemiseSettings.Prediction = 0.151
 			elseif ping < 140 then
-				getgenv().DesmiseSettings.Prediction = 0.1223333
+				getgenv().DemiseSettings.Prediction = 0.1223333
 			elseif ping < 150 then
-				getgenv().DesmiseSettings.Prediction = 0.15
+				getgenv().DemiseSettings.Prediction = 0.15
 			elseif ping < 160 then
-				getgenv().DesmiseSettings.Prediction = 0.16
+				getgenv().DemiseSettings.Prediction = 0.16
 			elseif ping < 170 then
-				getgenv().DesmiseSettings.Prediction = 0.1923111
+				getgenv().DemiseSettings.Prediction = 0.1923111
 			elseif ping < 180 then
-				getgenv().DesmiseSettings.Prediction = 0.19284
+				getgenv().DemiseSettings.Prediction = 0.19284
 			elseif ping > 180 then
-				getgenv().DesmiseSettings.Prediction = 0.166547
+				getgenv().DemiseSettings.Prediction = 0.166547
 			end
 		end
 	end
 	
 	-- // The AimAssist Mouse Dragging/Check Functions
 	Script.Functions.MouseChanger = function()
-		if getgenv().DesmiseSettings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and Players[tostring(AimTarget)].Character:FindFirstChild(getgenv().DesmiseSettings.Part) and Script.Functions.OnScreen(Players[tostring(AimTarget)].Character[getgenv().DesmiseSettings.Part]) then
+		if getgenv().DemiseSettings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and Players[tostring(AimTarget)].Character:FindFirstChild(getgenv().DemiseSettings.Part) and Script.Functions.OnScreen(Players[tostring(AimTarget)].Character[getgenv().DemiseSettings.Part]) then
 			local EndPosition = nil
-			local TargetPos = Players[tostring(AimTarget)].Character[getgenv().DesmiseSettings.Part].Position
-			local TargetVel = Players[tostring(AimTarget)].Character[getgenv().DesmiseSettings.Part].Velocity
+			local TargetPos = Players[tostring(AimTarget)].Character[getgenv().DemiseSettings.Part].Position
+			local TargetVel = Players[tostring(AimTarget)].Character[getgenv().DemiseSettings.Part].Velocity
 			local TargetMov = Players[tostring(AimTarget)].Character.Humanoid.MoveDirection
 	
-			if getgenv().DesmiseSettings.DetectDesync then
+			if getgenv().DemiseSettings.DetectDesync then
 				local Magnitude = TargetVel.magnitude
 				local Magnitude2 = TargetMov.magnitude
-				if Magnitude > getgenv().DesmiseSettings.DesyncDetection then
+				if Magnitude > getgenv().DemiseSettings.DesyncDetection then
 					DetectedDesyncV2 = true
 				elseif Magnitude < 1 and Magnitude2 > 0.01 then
 					DetectedDesyncV2 = true
@@ -774,8 +773,8 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			else
 				DetectedDesyncV2 = false
 			end
-			if getgenv().DesmiseSettings.DetectUnderGround then 
-				if TargetVel.Y < getgenv().DesmiseSettings.UnderGroundDetection then            
+			if getgenv().DemiseSettings.DetectUnderGround then 
+				if TargetVel.Y < getgenv().DemiseSettings.UnderGroundDetection then            
 					DetectedUnderGroundV2 = true
 				else
 					DetectedUnderGroundV2 = false
@@ -785,14 +784,14 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			end
 	
 			if Script.Functions.Alive(Client) then
-				if getgenv().DesmiseSettings.KnockedCheck then
+				if getgenv().DemiseSettings.KnockedCheck then
 					if Client.Character.Humanoid.health < 4 then
 						AimTarget = nil
 						IsTargetting = false
 						return
 					end
 				end
-				if getgenv().DesmiseSettings.DisableOutSideCircle then
+				if getgenv().DemiseSettings.DisableOutSideCircle then
 					local Magnitude = Script.Functions.GetMagnitudeFromMouse(AimTarget.Character.HumanoidRootPart)
 					if Script.Drawing.AimAssistCircle.Radius < Magnitude then
 						AimTarget = nil
@@ -802,7 +801,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				end
 			end
 	
-			if getgenv().DesmiseSettings.KnockedCheck and AimTarget.Character:FindFirstChild("BodyEffects") then 
+			if getgenv().DemiseSettings.KnockedCheck and AimTarget.Character:FindFirstChild("BodyEffects") then 
 				local KoCheck = AimTarget.Character.BodyEffects:FindFirstChild("K.O").Value
 				local Grabbed = AimTarget.Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
 				if KoCheck or Grabbed then
@@ -811,7 +810,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 					return
 				end
 			end
-			if getgenv().DesmiseSettings.KnockedCheck then
+			if getgenv().DemiseSettings.KnockedCheck then
 				if AimTarget.Character.Humanoid.health < 4 then
 					AimTarget = nil
 					IsTargetting = false
@@ -819,22 +818,22 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				end
 			end
 	
-			if DetectedDesyncV2 and getgenv().DesmiseSettings.EnablePrediction then
+			if DetectedDesyncV2 and getgenv().DemiseSettings.EnablePrediction then
 				local MoveDirection = TargetMov * 16
-				EndPosition = Camera:WorldToScreenPoint(TargetPos + (MoveDirection * getgenv().DesmiseSettings.Prediction))
-			elseif DetectedUnderGroundV2 and getgenv().DesmiseSettings.EnablePrediction then
-				EndPosition = Camera:WorldToScreenPoint(TargetPos + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * getgenv().DesmiseSettings.Prediction))
-			elseif getgenv().DesmiseSettings.EnablePrediction then
-				if getgenv().DesmiseSettings.UseShake and Script.Functions.Alive(Client) then
-					local Shake = getgenv().DesmiseSettings.ShakeValue / 100
+				EndPosition = Camera:WorldToScreenPoint(TargetPos + (MoveDirection * getgenv().DemiseSettings.Prediction))
+			elseif DetectedUnderGroundV2 and getgenv().DemiseSettings.EnablePrediction then
+				EndPosition = Camera:WorldToScreenPoint(TargetPos + (Vector3.new(TargetVel.X, 0, TargetVel.Z) * getgenv().DemiseSettings.Prediction))
+			elseif getgenv().DemiseSettings.EnablePrediction then
+				if getgenv().DemiseSettings.UseShake and Script.Functions.Alive(Client) then
+					local Shake = getgenv().DemiseSettings.ShakeValue / 100
 					local Mag = math.ceil((TargetPos - Client.Character.HumanoidRootPart.Position).Magnitude)
-					EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * getgenv().DesmiseSettings.Prediction) + Script.Functions.RandomVec(Mag * Shake, 0.1))
+					EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * getgenv().DemiseSettings.Prediction) + Script.Functions.RandomVec(Mag * Shake, 0.1))
 				else
-					EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * getgenv().DesmiseSettings.Prediction))
+					EndPosition = Camera:WorldToScreenPoint(TargetPos + (TargetVel * getgenv().DemiseSettings.Prediction))
 				end
 			else
-				if getgenv().DesmiseSettings.UseShake and Script.Functions.Alive(Client) then
-					local Shake = getgenv().DesmiseSettings.ShakeValue / 100
+				if getgenv().DemiseSettings.UseShake and Script.Functions.Alive(Client) then
+					local Shake = getgenv().DemiseSettings.ShakeValue / 100
 					local Mag = math.ceil((TargetPos - Client.Character.HumanoidRootPart.Position).Magnitude)
 					EndPosition = Camera:WorldToScreenPoint(TargetPos + Script.Functions.RandomVec(Mag * Shake, 0.1))
 				else
@@ -843,8 +842,8 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			end
 	
 			if EndPosition ~= nil then
-				local InCrementX = (EndPosition.X - Mouse.X) * getgenv().DesmiseSettings.Smoothness_X
-				local InCrementY = (EndPosition.Y - Mouse.Y) * getgenv().DesmiseSettings.Smoothness_Y
+				local InCrementX = (EndPosition.X - Mouse.X) * getgenv().DemiseSettings.Smoothness_X
+				local InCrementY = (EndPosition.Y - Mouse.Y) * getgenv().DemiseSettings.Smoothness_Y
 				mousemoverel(InCrementX, InCrementY)
 			end
 		end
@@ -853,7 +852,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	-- // Updates Esp Posistions
 	Script.Functions.UpdateEsp = function()
 		for i,v in pairs(Script.EspPlayers) do
-			if getgenv().DesmiseSettings.ESP and i ~= Client and i.Character and i.Character:FindFirstChild("Humanoid") and i.Character:FindFirstChild("HumanoidRootPart") and i.Character:FindFirstChild("Head") then
+			if getgenv().DemiseSettings.ESP and i ~= Client and i.Character and i.Character:FindFirstChild("Humanoid") and i.Character:FindFirstChild("HumanoidRootPart") and i.Character:FindFirstChild("Head") then
 				local Hum = i.Character.Humanoid
 				local Hrp = i.Character.HumanoidRootPart
 	
@@ -864,11 +863,11 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				local BottomOffset = BoxSize.Y + BoxPos.Y + 1
 	
 				if OnScreen then
-					if getgenv().DesmiseSettings.Name.Enabled then
+					if getgenv().DemiseSettings.Name.Enabled then
 						v.Name.Position = Vector2.new(BoxSize.X / 2 + BoxPos.X, BoxPos.Y - 16)
-						v.Name.Outline = getgenv().DesmiseSettings.Name.OutLine
+						v.Name.Outline = getgenv().DemiseSettings.Name.OutLine
 						v.Name.Text = tostring(i)
-						v.Name.Color = getgenv().DesmiseSettings.Name.Color
+						v.Name.Color = getgenv().DemiseSettings.Name.Color
 						v.Name.OutlineColor = Color3.fromRGB(0, 0, 0)
 						v.Name.Font = 0
 						v.Name.Size = 16
@@ -877,11 +876,11 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 					else
 						v.Name.Visible = false
 					end
-					if getgenv().DesmiseSettings.Distance.Enabled and Client.Character and Client.Character:FindFirstChild("HumanoidRootPart") then
+					if getgenv().DemiseSettings.Distance.Enabled and Client.Character and Client.Character:FindFirstChild("HumanoidRootPart") then
 						v.Distance.Position = Vector2.new(BoxSize.X / 2 + BoxPos.X, BottomOffset)
-						v.Distance.Outline = getgenv().DesmiseSettings.Distance.OutLine
+						v.Distance.Outline = getgenv().DemiseSettings.Distance.OutLine
 						v.Distance.Text = "[" .. math.floor((Hrp.Position - Client.Character.HumanoidRootPart.Position).Magnitude) .. "m]"
-						v.Distance.Color = getgenv().DesmiseSettings.Distance.Color
+						v.Distance.Color = getgenv().DemiseSettings.Distance.Color
 						v.Distance.OutlineColor = Color3.fromRGB(0, 0, 0)
 						BottomOffset = BottomOffset + 15
 	
@@ -892,40 +891,40 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 					else
 						v.Distance.Visible = false
 					end
-					if getgenv().DesmiseSettings.Box.Enabled then
+					if getgenv().DemiseSettings.Box.Enabled then
 						v.BoxOutline.Size = BoxSize
 						v.BoxOutline.Position = BoxPos
-						v.BoxOutline.Visible = getgenv().DesmiseSettings.Box.OutLine
+						v.BoxOutline.Visible = getgenv().DemiseSettings.Box.OutLine
 						v.BoxOutline.Color = Color3.fromRGB(0, 0, 0)
 	
 						v.Box.Size = BoxSize
 						v.Box.Position = BoxPos
-						v.Box.Color = getgenv().DesmiseSettings.Box.Color
+						v.Box.Color = getgenv().DemiseSettings.Box.Color
 						v.Box.Visible = true
 					else
 						v.BoxOutline.Visible = false
 						v.Box.Visible = false
 					end
-					if getgenv().DesmiseSettings.HealthBar.Enabled then
+					if getgenv().DemiseSettings.HealthBar.Enabled then
 						v.HealthBar.From = Vector2.new((BoxPos.X - 5), BoxPos.Y + BoxSize.Y)
 						v.HealthBar.To = Vector2.new(v.HealthBar.From.X, v.HealthBar.From.Y - (Hum.Health / Hum.MaxHealth) * BoxSize.Y)
-						v.HealthBar.Color = getgenv().DesmiseSettings.HealthBar.Color
+						v.HealthBar.Color = getgenv().DemiseSettings.HealthBar.Color
 						v.HealthBar.Visible = true
 	
 						v.HealthBarOutline.From = Vector2.new(v.HealthBar.From.X, BoxPos.Y + BoxSize.Y + 1)
 						v.HealthBarOutline.To = Vector2.new(v.HealthBar.From.X, (v.HealthBar.From.Y - 1 * BoxSize.Y) -1)
 						v.HealthBarOutline.Color = Color3.fromRGB(0, 0, 0)
-						v.HealthBarOutline.Visible = getgenv().DesmiseSettings.HealthBar.OutLine
+						v.HealthBarOutline.Visible = getgenv().DemiseSettings.HealthBar.OutLine
 					else
 						v.HealthBarOutline.Visible = false
 						v.healthBar.Visible = false
 					end
-					if getgenv().DesmiseSettings.HealthText.Enabled then
+					if getgenv().DemiseSettings.HealthText.Enabled then
 						v.HealthText.Text = tostring(math.floor((Hum.Health / Hum.MaxHealth) * 100 + 0.5))
 						v.HealthText.Position = Vector2.new((BoxPos.X - 20), (BoxPos.Y + BoxSize.Y - 1 * BoxSize.Y) -1)
-						v.HealthText.Color = getgenv().DesmiseSettings.HealthText.Color
+						v.HealthText.Color = getgenv().DemiseSettings.HealthText.Color
 						v.HealthText.OutlineColor = Color3.fromRGB(0, 0, 0)
-						v.HealthText.Outline = getgenv().DesmiseSettings.HealthText.OutLine
+						v.HealthText.Outline = getgenv().DemiseSettings.HealthText.OutLine
 	
 						v.HealthText.Font = 0
 						v.HealthText.Size = 16
@@ -966,27 +965,27 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	RS.RenderStepped:Connect(function()
 		Script.Functions.UpdateEsp()
 		Script.Functions.UpdateFOV()
-		if getgenv().DesmiseSettings.Enabled and getgenv().DesmiseSettings.ClosestPoint and Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(getgenv().DesmiseSettings.HitParts) then
-			local ClosestPoint = Script.Functions.GetClosestPointOfPart(Players[tostring(SilentTarget)].Character[getgenv().DesmiseSettings.HitParts])
+		if getgenv().DemiseSettings.Enabled and getgenv().DemiseSettings.ClosestPoint and Script.Functions.Alive(SilentTarget) and Players[tostring(SilentTarget)].Character:FindFirstChild(getgenv().DemiseSettings.HitParts) then
+			local ClosestPoint = Script.Functions.GetClosestPointOfPart(Players[tostring(SilentTarget)].Character[getgenv().DemiseSettings.HitParts])
 			ClosestPointCF = CFrame.new(ClosestPoint.X, ClosestPoint.Y, ClosestPoint.Z)
 		end
-		if getgenv().DesmiseSettings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and getgenv().DesmiseSettings.ClosestMousePoint and Script.Functions.Alive(SilentTarget) then
+		if getgenv().DemiseSettings.AimAssistEnabled and Script.Functions.Alive(AimTarget) and getgenv().DemiseSettings.ClosestMousePoint and Script.Functions.Alive(SilentTarget) then
 			local currentpart = tostring(Script.Functions.GetClosestBodyPart(AimTarget.Character))
-			if getgenv().DesmiseSettings.ClosestMousePoint then
-				getgenv().DesmiseSettings.Part = currentpart
+			if getgenv().DemiseSettings.ClosestMousePoint then
+				getgenv().DemiseSettings.Part = currentpart
 			end
-			if getgenv().DesmiseSettings.ClosestMousePoint then
-				getgenv().DesmiseSettings.Part = currentpart
-				OldSilentAimPart = getgenv().DesmiseSettings.Part
+			if getgenv().DemiseSettings.ClosestMousePoint then
+				getgenv().DemiseSettings.Part = currentpart
+				OldSilentAimPart = getgenv().DemiseSettings.Part
 			end
 			return
 		end
-		if getgenv().DesmiseSettings.AimAssistEnabled and getgenv().DesmiseSettings.ClosestMousePoint and Script.Functions.Alive(AimTarget) then
-			getgenv().DesmiseSettings.Part = tostring(Script.Functions.GetClosestBodyPart(AimTarget.Character))
+		if getgenv().DemiseSettings.AimAssistEnabled and getgenv().DemiseSettings.ClosestMousePoint and Script.Functions.Alive(AimTarget) then
+			getgenv().DemiseSettings.Part = tostring(Script.Functions.GetClosestBodyPart(AimTarget.Character))
 		end
-		if getgenv().DesmiseSettings.Enabled and getgenv().DesmiseSettings.NearestHitPart and Script.Functions.Alive(SilentTarget) then
-			getgenv().DesmiseSettings.HitParts = tostring(Script.Functions.GetClosestBodyPart(SilentTarget.Character))
-			OldSilentAimPart = getgenv().DesmiseSettings.HitParts
+		if getgenv().DemiseSettings.Enabled and getgenv().DemiseSettings.NearestHitPart and Script.Functions.Alive(SilentTarget) then
+			getgenv().DemiseSettings.HitParts = tostring(Script.Functions.GetClosestBodyPart(SilentTarget.Character))
+			OldSilentAimPart = getgenv().DemiseSettings.HitParts
 		end
 	end)
 	
