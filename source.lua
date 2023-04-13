@@ -257,6 +257,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			if getgenv().DemiseSettings.Enabled == true then 
 			getgenv().DemiseSettings.Enabled = false
 			if getgenv().DemiseSettings.Enabled_Notification then
+				AimTarget = nil
 				game.StarterGui:SetCore("SendNotification",{
 					Title = "Demise Silent Aim",
 					Text = "Disabled",
@@ -267,7 +268,6 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Size = UDim2.new(0, 65, 0, 65)
 		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Position = UDim2.new(0, 0, 0, 0)
 		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.Name = "Notification1"
-		AimTarget = nil
 		end
 		elseif getgenv().DemiseSettings.Enabled == false then
         getgenv().DemiseSettings.Enabled = true
