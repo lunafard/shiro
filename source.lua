@@ -163,18 +163,26 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		if getgenv().LoadShirou == true then
 			if getgenv().DemiseSettings.Enabled_Notification then
 			game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "Shirou";
-			Text = "Shirous lock is already loaded.";
-			Icon = "";
+			Title = "Demise Silent Aim";
+			Text = "Demise is already loaded.";
+			Icon = "rbxassetid://13118651476";
 			Duration = 5
 		})
+		wait(0.325)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Size = UDim2.new(0, 65, 0, 65)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Position = UDim2.new(0, 0, 0, 0)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.Name = "Notification1"
 			wait(1)
 			game:GetService("StarterGui"):SetCore("SendNotification", {
 			Title = "Updated";
 			Text = "If you made changes to your settings they have been applied";
-			Icon = "";
+			Icon = "rbxassetid://13118651476";
 			Duration = 5
 		})
+		wait(0.325)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Size = UDim2.new(0, 65, 0, 65)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Position = UDim2.new(0, 0, 0, 0)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.Name = "Notification1"
 			return 
 			end
 			end
@@ -183,11 +191,15 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			
 	if getgenv().DemiseSettings.Enabled_Notification then
 			game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "Shirous lock loaded";
+			Title = "Demise loaded";
 			Text = "食肉#0001";
-			Icon = "";
+			Icon = "rbxassetid://13118651476";
 			Duration = 5
 		})
+		wait(0.325)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Size = UDim2.new(0, 65, 0, 65)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Position = UDim2.new(0, 0, 0, 0)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.Name = "Notification1"
 	end
 	
 	if getgenv().DemiseSettings.AntiMacroFling then
@@ -202,6 +214,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	end
 
 	if getgenv().DemiseSettings.EnableMemory and getgenv().MemSpoofa == nil then
+		local MemoryMain = game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel
 		game:GetService("RunService").Heartbeat:Connect(function()
 		if game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame.TextLabel.Text == "Memory" then
 		game:GetService("RunService").RenderStepped:Wait()
@@ -216,8 +229,8 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		end);
 		end
 		end)
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel:GetPropertyChangedSignal("Text"):Connect(function() 
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel.Text = "" .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) ..  " MB";
+		MemoryMain:GetPropertyChangedSignal("Text"):Connect(function() 
+		MemoryMain.Text = "" .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) ..  " MB";
 		end);
 		getgenv().MemSpoofa = "not nil"
 		end
@@ -238,18 +251,41 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 				end
 			end
 		end
-		local Keybind2 = getgenv().DemiseSettings.KeyBind:lower()
+		local Keybind2 = string.lower(getgenv().DemiseSettings.KeyBind)
 		if Key == Keybind2 and getgenv().DemiseSettings.UseKeybind then
-			getgenv().DemiseSettings.Enabled = not getgenv().DemiseSettings.Enabled
+		    pcall(function()
+			if getgenv().DemiseSettings.Enabled == true then 
+			getgenv().DemiseSettings.Enabled = false
 			if getgenv().DemiseSettings.Enabled_Notification then
 				game.StarterGui:SetCore("SendNotification",{
-					Title = "Shirous Lock",
-					Text = "" .. tostring(getgenv().DemiseSettings.Enabled),
-					Icon = "",
+					Title = "Demise Silent Aim",
+					Text = "Disabled",
+					Icon = "rbxassetid://13118651476",
 					Duration = 1
 				})
-			end
+		wait(0.325)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Size = UDim2.new(0, 65, 0, 65)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Position = UDim2.new(0, 0, 0, 0)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.Name = "Notification1"
 		end
+		elseif getgenv().DemiseSettings.Enabled == false then
+        	getgenv().DemiseSettings.Enabled = true
+		if getgenv().DemiseSettings.Enabled_Notification then
+		   			game.StarterGui:SetCore("SendNotification",{
+					Title = "Demise Silent Aim",
+					Text = "Enabled",
+					Icon = "rbxassetid://13118651476",
+					Duration = 1
+				})
+		wait(0.325)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Size = UDim2.new(0, 65, 0, 65)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.NotificationImage.Position = UDim2.new(0, 0, 0, 0)
+		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.Name = "Notification1"
+end
+end
+end)
+end
+end)
 		local Keybind3 = getgenv().DemiseSettings.UnderGroundKey:lower()
 		if Key == Keybind3 and getgenv().DemiseSettings.UseUnderGroundKeybind then
 			getgenv().DemiseSettings.DetectUnderGround = not getgenv().DemiseSettings.DetectUnderGround
