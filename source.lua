@@ -175,7 +175,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			wait(1)
 			game:GetService("StarterGui"):SetCore("SendNotification", {
 			Title = "Updated";
-			Text = "If you made changes to your settings they have been applied";
+			Text = "If you made changes they have been applied";
 			Icon = "rbxassetid://13118651476";
 			Duration = 5
 		})
@@ -269,7 +269,7 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		game:GetService("CoreGui").RobloxGui.NotificationFrame.Notification.Name = "Notification1"
 		end
 		elseif getgenv().DemiseSettings.Enabled == false then
-        	getgenv().DemiseSettings.Enabled = true
+        getgenv().DemiseSettings.Enabled = true
 		if getgenv().DemiseSettings.Enabled_Notification then
 		   			game.StarterGui:SetCore("SendNotification",{
 					Title = "Demise Silent Aim",
@@ -285,7 +285,6 @@ end
 end
 end)
 end
-end)
 		local Keybind3 = getgenv().DemiseSettings.UnderGroundKey:lower()
 		if Key == Keybind3 and getgenv().DemiseSettings.UseUnderGroundKeybind then
 			getgenv().DemiseSettings.DetectUnderGround = not getgenv().DemiseSettings.DetectUnderGround
