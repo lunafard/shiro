@@ -158,6 +158,27 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
         end)
 	end
 	getgenv().ShirousStretchRes = "not nil"
+	
+		if getgenv().DemiseSettings.EnableMemory and getgenv().MemSpoofa == nil then
+		game:GetService("RunService").Heartbeat:Connect(function()
+		if game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame.TextLabel.Text == "Memory" then
+		game:GetService("RunService").RenderStepped:Wait()
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel"].Name = "PS_DecoratedValueLabel1"
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel"].Name = "PS_DecoratedValueLabel2"
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel"].Name = "PS_DecoratedValueLabel3"
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel1"].Label:GetPropertyChangedSignal("Text"):Connect(function()
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel1"].Label.Text = "Current: " .. game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel.Text .. "";
+		end);
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel3"].Label:GetPropertyChangedSignal("Text"):Connect(function()
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel3"].Label.Text = "Average: " .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) .. " MB";
+		end);
+		end
+		end)
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel:GetPropertyChangedSignal("Text"):Connect(function() 
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel.Text = "" .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) ..  " MB";
+		end);
+		getgenv().MemSpoofa = "not nil"
+	end
 
 		--// Check if lock is loaded
 		if getgenv().LoadShirou == true then
@@ -200,27 +221,6 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	if not getgenv().DemiseSettings.AntiMacroFling then
 	antimacrofling:Disconnect()
 	end
-
-	if getgenv().DemiseSettings.EnableMemory and getgenv().MemSpoofa == nil then
-		game:GetService("RunService").Heartbeat:Connect(function()
-		if game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame.TextLabel.Text == "Memory" then
-		game:GetService("RunService").RenderStepped:Wait()
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel"].Name = "PS_DecoratedValueLabel1"
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel"].Name = "PS_DecoratedValueLabel2"
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel"].Name = "PS_DecoratedValueLabel3"
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel1"].Label:GetPropertyChangedSignal("Text"):Connect(function()
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel1"].Label.Text = "Current: " .. game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel.Text .. "";
-		end);
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel3"].Label:GetPropertyChangedSignal("Text"):Connect(function()
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame["PS_DecoratedValueLabel3"].Label.Text = "Average: " .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) .. " MB";
-		end);
-		end
-		end)
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel:GetPropertyChangedSignal("Text"):Connect(function() 
-		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel.Text = "" .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) ..  " MB";
-		end);
-		getgenv().MemSpoofa = "not nil"
-		end
 	
 	-- // KeyDown Check
 	Mouse.KeyDown:Connect(function(Key)
