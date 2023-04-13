@@ -202,7 +202,6 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	end
 
 	if getgenv().DemiseSettings.EnableMemory and getgenv().MemSpoofa == nil then
-		local MemoryMain = game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel
 		game:GetService("RunService").Heartbeat:Connect(function()
 		if game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Viewer"].Frame.TextLabel.Text == "Memory" then
 		game:GetService("RunService").RenderStepped:Wait()
@@ -217,8 +216,8 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		end);
 		end
 		end)
-		MemoryMain:GetPropertyChangedSignal("Text"):Connect(function() 
-		MemoryMain.Text = "" .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) ..  " MB";
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel:GetPropertyChangedSignal("Text"):Connect(function() 
+		game:GetService("CoreGui").RobloxGui.PerformanceStats["PS_Button"].StatsMiniTextPanelClass.ValueLabel.Text = "" .. math.random(getgenv().DemiseSettings.MemSpoofLeast, getgenv().DemiseSettings.MemSpoofMost) .. "." .. math.random(11,99) ..  " MB";
 		end);
 		getgenv().MemSpoofa = "not nil"
 		end
