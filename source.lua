@@ -143,13 +143,13 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 		Script.Drawing.SilentCircle.Radius = getgenv().DemiseSettings.Fov_Size * 3
 	end
 	
-	if not getgenv().DemiseSettings.UseStretchedResolution then
-	getgenv().DemiseSettings.Resolution = 1
-	end
-
 	if not getgenv().DemiseSettings.EnableSmoothness then
 	getgenv().Demisesettings.Smoothness_X = 1
 	getgenv().Demisesettings.Smoothness_Y = 1
+	end
+	
+	if not getgenv().DemiseSettings.UseStretchedResolution then
+	getgenv().DemiseSettings.Resolution = 1
 	end
 	
 	if getgenv().DemiseSettings.UseStretchedResolution and getgenv().ShirousStretchRes == nil then
