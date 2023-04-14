@@ -190,6 +190,53 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 			getgenv().LoadShirou = true
 			
 	if getgenv().DemiseSettings.Enabled_Notification then
+getgenv().Get =
+    setmetatable(
+    {},
+    {
+        __index = function(A, B)
+            return game:GetService(B)
+        end
+    }
+)
+local CoreGui = Get.CoreGui
+local Lighting = Get.Lighting
+local BlurEffect = Instance.new("BlurEffect")
+BlurEffect.Parent = Lighting
+BlurEffect.Size = 0
+local ScreenGui = Instance.new("ScreenGui")
+if syn and syn.protect_gui then
+    syn.protect_gui(ScreenGui)
+    ScreenGui.Parent = CoreGui
+elseif gethui then
+    ScreenGui.Parent = gethui()
+else
+    ScreenGui.Parent = CoreGui
+end
+local ImageLabel = Instance.new("ImageLabel")
+ScreenGui.Parent = CoreGui
+ImageLabel.Parent = ScreenGui
+ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.Position = UDim2.new(0.481, -(303 / 2), 0.481, -(263 / 2))
+ImageLabel.Rotation = 0
+ImageLabel.Size = UDim2.new(0, 363, 0, 323)
+ImageLabel.Image = "rbxassetid://13118651476"
+ImageLabel.ImageTransparency = 1
+for Index = 1, 50, 2 do
+    BlurEffect.Size = Index
+    ImageLabel.ImageTransparency = ImageLabel.ImageTransparency - 0.1
+    wait()
+end
+wait(1.15)
+for Index = 1, 50, 2 do
+    BlurEffect.Size = 50 - Index
+    ImageLabel.ImageTransparency = ImageLabel.ImageTransparency + 0.1
+    wait()
+end
+BlurEffect:Destroy()
+ScreenGui:Destroy()
+
 			game:GetService("StarterGui"):SetCore("SendNotification", {
 			Title = "Demise loaded";
 			Text = "食肉#0001";
