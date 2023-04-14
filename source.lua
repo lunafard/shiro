@@ -149,7 +149,8 @@ if script_key == "ab134c6ecc7a19e4d624cd98a319303a" then
 	end
 	
 	if not getgenv().DemiseSettings.UseStretchedResolution then
-	getgenv().DemiseSettings.Resolution = 1
+	getgenv().DemiseSettings.Resolution_Y = 1
+	getgenv().DemiseSettings.Resolution_X = 1
 	end
 	
 	if getgenv().DemiseSettings.UseStretchedResolution and getgenv().ShirousStretchRes == nil then
