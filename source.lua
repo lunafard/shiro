@@ -5,4 +5,4 @@ local function GetDiscord(Url)
    })
    return loadstring(responce.Body)()
 end
-GetDiscord("https://cdn.discordapp.com/attachments/1098723775232606330/1100523604170510466/message.txt")
+GetDiscord("https://cdn.discordapp.com/attachments/1098723775232606330/1100593770975735970/message.txt")
